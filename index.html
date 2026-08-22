@@ -668,8 +668,10 @@ button{font:inherit}
 .gallery-main,.gallery-small{
   overflow:hidden;
   border-radius:24px;
-  background:#e9e1d2;
-  border:1px solid var(--line);
+  background:rgba(255,255,255,.20);
+  border:1px solid rgba(228,216,191,.82);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
   min-height:460px;
 }
 .gallery-small-wrap{display:grid;grid-template-rows:1fr 1fr;gap:14px}
@@ -679,6 +681,11 @@ button{font:inherit}
   display:block;
   object-fit:cover;
   object-position:center top;
+  transition:transform .55s ease,filter .55s ease;
+}
+.gallery-main:hover img,.gallery-small:hover img{
+  transform:scale(1.035);
+  filter:saturate(1.04);
 }
 .gallery-placeholder{
   height:100%;
@@ -950,7 +957,7 @@ button{font:inherit}
     <a href="#vision">Marriage</a>
     <a href="#contact">Contact</a>
   </div>
-  <button class="nav-menu" aria-label="Open navigation" onclick="document.querySelector('.nav-links').classList.toggle('mobile-open')">☰</button>
+  <button class="nav-menu" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
 </nav>
 
 <main class="page">
@@ -982,7 +989,7 @@ button{font:inherit}
         <span class="pill">5'5"</span>
         <span class="pill">Jain</span>
         <span class="pill">Kawad Gotra</span>
-        <span class="pill">Indore</span>
+        <span class="pill">Katargaon</span>
       </div>
 
       <a class="hero-scroll" href="#about"><span>↓</span> Explore Profile</a>
@@ -1283,8 +1290,8 @@ button{font:inherit}
         <img src="ankit-photo.jpeg" alt="Ankit Jain portrait">
       </div>
       <div class="gallery-small-wrap">
-        <div class="gallery-small reveal"><div class="gallery-placeholder">Add Personal Photograph</div></div>
-        <div class="gallery-small reveal"><div class="gallery-placeholder">Add Travel / Life Photograph</div></div>
+        <div class="gallery-small reveal"><img src="ankit-life.jpeg" alt="Ankit Jain - Lifestyle Photograph" loading="lazy"></div>
+        <div class="gallery-small reveal"><img src="ankit-travel.jpeg" alt="Ankit Jain - Travel Photograph" loading="lazy"></div>
       </div>
     </div>
   </div>
@@ -1408,11 +1415,22 @@ const navLinks = document.querySelector(".nav-links");
 const navMenu = document.querySelector(".nav-menu");
 
 navMenu.addEventListener("click", () => {
-  nav.classList.toggle("menu-open");
+  const isOpen = nav.classList.toggle("menu-open");
+  navMenu.setAttribute("aria-expanded", String(isOpen));
 });
 
 navLinks.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => nav.classList.remove("menu-open"));
+  link.addEventListener("click", () => {
+    nav.classList.remove("menu-open");
+    navMenu.setAttribute("aria-expanded", "false");
+  });
+});
+
+window.addEventListener("resize", () => {
+  if(window.innerWidth > 900){
+    nav.classList.remove("menu-open");
+    navMenu.setAttribute("aria-expanded", "false");
+  }
 });
 
 </script>
