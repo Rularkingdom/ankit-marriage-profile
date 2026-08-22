@@ -24,27 +24,62 @@
   --line:#e4d8bf;
   --white:#fff;
   --shadow:0 20px 60px rgba(16,47,42,.10);
-  --shadow-soft:0 10px 30px rgba(16,47,42,.07);
+  --shadow-soft:0 10px 30px rgba(90,24,37,.07);
 }
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0;
-  background:
-    radial-gradient(circle at 10% 10%, rgba(184,148,82,.10), transparent 28%),
-    radial-gradient(circle at 90% 25%, rgba(16,47,42,.07), transparent 30%),
-    var(--ivory);
   color:var(--ink);
   font-family:Inter,Arial,sans-serif;
   line-height:1.65;
   -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  background:
+    radial-gradient(circle at 10% 8%, rgba(184,148,82,.17), transparent 24%),
+    radial-gradient(circle at 90% 18%, rgba(90,24,37,.10), transparent 27%),
+    radial-gradient(circle at 15% 72%, rgba(184,148,82,.08), transparent 22%),
+    radial-gradient(circle at 85% 78%, rgba(90,24,37,.07), transparent 24%),
+    linear-gradient(135deg, #fbf7ee 0%, #f3ebdc 48%, #fbf7ee 100%);
+  background-attachment:fixed;
 }
 a{color:inherit}
 img{max-width:100%}
 button{font:inherit}
 
-.page{overflow:hidden}
+.page{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+}
+.page::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  pointer-events:none;
+  opacity:.45;
+  background:
+    radial-gradient(circle at 50% 0%, transparent 0 120px, rgba(184,148,82,.10) 121px 122px, transparent 123px),
+    radial-gradient(circle at 50% 0%, transparent 0 175px, rgba(184,148,82,.055) 176px 177px, transparent 178px),
+    radial-gradient(circle at 0% 45%, transparent 0 90px, rgba(90,24,37,.045) 91px 92px, transparent 93px),
+    radial-gradient(circle at 100% 65%, transparent 0 100px, rgba(184,148,82,.055) 101px 102px, transparent 103px);
+}
+.page::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  opacity:.16;
+  background-image:
+    linear-gradient(45deg, transparent 48%, rgba(184,148,82,.13) 49%, rgba(184,148,82,.13) 51%, transparent 52%),
+    linear-gradient(-45deg, transparent 48%, rgba(184,148,82,.13) 49%, rgba(184,148,82,.13) 51%, transparent 52%);
+  background-size:76px 76px;
+  mask-image:linear-gradient(to bottom, rgba(0,0,0,.35), transparent 36%, transparent 68%, rgba(0,0,0,.25));
+  -webkit-mask-image:linear-gradient(to bottom, rgba(0,0,0,.35), transparent 36%, transparent 68%, rgba(0,0,0,.25));
+}
 
 /* ---------- NAV ---------- */
 .nav{
@@ -346,7 +381,7 @@ button{font:inherit}
   margin-top:42px;
 }
 .glass-card{
-  background:rgba(255,255,255,.50);
+  background:rgba(255,255,255,.42);
   border:1px solid rgba(228,216,191,.95);
   border-radius:26px;
   padding:32px;
@@ -555,7 +590,7 @@ button{font:inherit}
   padding:23px;
   border-radius:22px;
   border:1px solid var(--line);
-  background:rgba(255,253,248,.58);
+  background:rgba(255,253,248,.50);
   box-shadow:var(--shadow-soft);
   display:flex;
   flex-direction:column;
@@ -646,7 +681,7 @@ button{font:inherit}
 }
 .preference{
   padding:19px;
-  background:rgba(255,253,248,.58);
+  background:rgba(255,253,248,.50);
   border:1px solid var(--line);
   border-radius:18px;
 }
@@ -958,6 +993,34 @@ button{font:inherit}
   .nav.menu-open .nav-links a{
     width:100%;
   }
+}
+
+
+/* ---------- PAGE BACKGROUND THEME ---------- */
+.section:not(.career):not(.contact-section){
+  position:relative;
+}
+.section:not(.career):not(.contact-section)::before{
+  content:"✦";
+  position:absolute;
+  top:30px;
+  right:4.5%;
+  color:rgba(184,148,82,.24);
+  font-family:"Cormorant Garamond",serif;
+  font-size:27px;
+  pointer-events:none;
+}
+.soft-section::after{
+  content:"";
+  position:absolute;
+  width:230px;
+  height:230px;
+  right:-115px;
+  top:50%;
+  transform:translateY(-50%);
+  border:1px solid rgba(184,148,82,.10);
+  border-radius:50%;
+  pointer-events:none;
 }
 
 </style>
