@@ -4,604 +4,1293 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ankit Jain | Marriage Profile</title>
+<meta name="description" content="Ankit Jain - Digital Marriage Profile">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-:root {
-  --ink: #2b221e; 
-  --gold: #c59b27; 
-  --gold-light: #f7f1e5;
-  --gold-border: #e0cca9;
-  --maroon: #4a121a; 
-  --maroon-dark: #2d0a0f;
-  --cream: #faf6ee; 
-  --card-bg: #ffffff;
-  --line: #ebdcc2;
+:root{
+  --green:#5A1825;
+  --green-2:#70202F;
+  --green-3:#7F2A3B;
+  --ivory:#f7f3ea;
+  --paper:#fffdf8;
+  --gold:#b89452;
+  --gold-soft:#eadcbe;
+  --gold-pale:#fbf7ee;
+  --ink:#24191C;
+  --muted:#66716c;
+  --line:#e4d8bf;
+  --white:#fff;
+  --shadow:0 20px 60px rgba(16,47,42,.10);
+  --shadow-soft:0 10px 30px rgba(16,47,42,.07);
 }
 
-* { box-sizing: border-box; }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(184,148,82,.10), transparent 28%),
+    radial-gradient(circle at 90% 25%, rgba(16,47,42,.07), transparent 30%),
+    var(--ivory);
+  color:var(--ink);
+  font-family:Inter,Arial,sans-serif;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+img{max-width:100%}
+button{font:inherit}
 
-body {
-  margin: 0; 
-  background: #f4efe6; 
-  color: var(--ink);
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  -webkit-font-smoothing: antialiased;
+.page{overflow:hidden}
+
+/* ---------- NAV ---------- */
+.nav{
+  position:fixed;
+  top:18px;
+  left:50%;
+  transform:translateX(-50%);
+  width:min(1180px,calc(100% - 32px));
+  z-index:100;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:10px 12px 10px 18px;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(90,24,37,.72);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  border-radius:999px;
+  box-shadow:0 14px 35px rgba(0,0,0,.16);
+  color:#fff;
+}
+.nav-brand{
+  font-family:"Cormorant Garamond",serif;
+  font-size:22px;
+  font-weight:600;
+  letter-spacing:.7px;
+}
+.nav-links{display:flex;gap:5px;align-items:center}
+.nav-links a{
+  text-decoration:none;
+  color:rgba(255,255,255,.82);
+  font-size:11px;
+  letter-spacing:.8px;
+  text-transform:uppercase;
+  padding:8px 10px;
+  border-radius:999px;
+}
+.nav-links a:hover{background:rgba(255,255,255,.10);color:#fff}
+.nav-menu{display:none}
+
+/* ---------- HERO ---------- */
+.hero{
+  min-height:760px;
+  padding:130px 6vw 80px;
+  position:relative;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(184,148,82,.18), transparent 25%),
+    radial-gradient(circle at 20% 80%, rgba(255,255,255,.05), transparent 25%),
+    var(--green);
+  color:#fff;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  width:520px;height:520px;
+  border:1px solid rgba(184,148,82,.18);
+  border-radius:50%;
+  right:-160px;top:-180px;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  width:360px;height:360px;
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:50%;
+  left:-180px;bottom:-180px;
+}
+.hero-inner{
+  width:min(1200px,100%);
+  margin:auto;
+  display:grid;
+  grid-template-columns:minmax(320px,470px) 1fr;
+  gap:clamp(45px,7vw,100px);
+  align-items:center;
+  position:relative;
+  z-index:2;
+}
+.hero-photo{
+  position:relative;
+  width:min(100%,450px);
+  justify-self:center;
+}
+.hero-photo::before{
+  content:"";
+  position:absolute;
+  inset:-18px -18px 18px 18px;
+  border:1px solid rgba(184,148,82,.55);
+  border-radius:32px;
+}
+.hero-photo::after{
+  content:"";
+  position:absolute;
+  inset:-35px;
+  background:radial-gradient(circle,rgba(184,148,82,.18),transparent 66%);
+  z-index:-1;
+}
+.photo-frame{
+  aspect-ratio:4/5;
+  padding:8px;
+  background:linear-gradient(145deg,#d8bd7e,var(--gold),#745522);
+  border-radius:28px;
+  box-shadow:0 35px 70px rgba(0,0,0,.35);
+  position:relative;
+}
+.photo-frame img{
+  width:100%;height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:center top;
+  border-radius:21px;
+  background:#6B2836;
+}
+.photo-caption{
+  position:absolute;
+  left:24px;bottom:24px;
+  background:rgba(90,24,37,.66);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.14);
+  padding:9px 14px;
+  border-radius:999px;
+  font-size:10px;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+}
+.hero-copy .eyebrow{
+  color:var(--gold-soft);
+  font-size:12px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  font-weight:700;
+  margin-bottom:16px;
+}
+.hero-copy h1{
+  margin:0;
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(64px,8vw,108px);
+  line-height:.88;
+  font-weight:600;
+  letter-spacing:-2px;
+}
+.hero-copy .subtitle{
+  margin:16px 0 25px;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:5px;
+  color:var(--gold-soft);
+  font-weight:600;
+}
+.hero-copy .quote{
+  max-width:650px;
+  margin:0 0 28px;
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(25px,3vw,38px);
+  line-height:1.25;
+  color:#f4eee3;
+}
+.hero-copy .intro{
+  max-width:620px;
+  color:rgba(255,255,255,.72);
+  font-size:14px;
+}
+.hero-pills{display:flex;flex-wrap:wrap;gap:9px;margin-top:28px}
+.pill{
+  border:1px solid rgba(184,148,82,.45);
+  background:rgba(255,255,255,.06);
+  padding:8px 14px;
+  border-radius:999px;
+  font-size:11px;
+  letter-spacing:.6px;
+}
+.hero-scroll{
+  display:inline-flex;
+  margin-top:38px;
+  align-items:center;
+  gap:10px;
+  color:var(--gold-soft);
+  text-decoration:none;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+.hero-scroll span{
+  width:30px;height:30px;
+  border:1px solid rgba(184,148,82,.55);
+  border-radius:50%;
+  display:grid;place-items:center;
 }
 
-.page {
-  max-width: 880px; 
-  margin: 40px auto; 
-  background: var(--cream);
-  box-shadow: 0 25px 60px rgba(74,18,26,0.14); 
-  border: 1px solid var(--gold-border);
-  border-radius: 24px;
-  overflow: hidden;
-  position: relative;
+/* ---------- COMMON ---------- */
+.container{width:min(1200px,calc(100% - 48px));margin:auto}
+.section{padding:90px 0}
+.section-label{
+  color:var(--gold);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+.section-title{
+  margin:0;
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(42px,5vw,64px);
+  line-height:1;
+  color:var(--green);
+  font-weight:600;
+}
+.section-lead{
+  max-width:720px;
+  margin:18px 0 0;
+  color:var(--muted);
+  font-size:15px;
+}
+.soft-section{
+  background:rgba(255,255,255,.26);
+  border-top:1px solid rgba(228,216,191,.7);
+  border-bottom:1px solid rgba(228,216,191,.7);
 }
 
-/* Decorative Traditional Corner Accents */
-.page::before, .page::after {
-  content: "";
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  pointer-events: none;
-  background-image: radial-gradient(circle, var(--gold) 10%, transparent 11%);
-  background-size: 16px 16px;
-  opacity: 0.15;
-  z-index: 1;
+/* ---------- QUICK FACTS ---------- */
+.facts{
+  margin-top:-45px;
+  position:relative;
+  z-index:5;
 }
-.page::before { top: 10px; left: 10px; }
-.page::after { bottom: 10px; right: 10px; }
-
-header {
-  padding: 45px 32px 32px; 
-  text-align: center;
-  border-bottom: 1px solid var(--line);
-  background: linear-gradient(180deg, #ffffff 0%, var(--cream) 100%);
-  position: relative;
-  z-index: 2;
+.facts-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
 }
-
-.motto { 
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 17px; 
-  letter-spacing: 2px; 
-  color: var(--maroon); 
-  margin-bottom: 16px;
-  font-weight: 600;
+.fact{
+  background:rgba(255,253,248,.72);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:22px 18px;
+  box-shadow:var(--shadow-soft);
+  text-align:center;
+  backdrop-filter:blur(12px);
 }
-
-h1 { 
-  margin: 0 0 6px; 
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 48px; 
-  letter-spacing: 0.5px; 
-  color: var(--maroon-dark); 
-  font-weight: 700;
+.fact .number{
+  display:block;
+  font-family:"Cormorant Garamond",serif;
+  font-size:28px;
+  color:var(--green);
+  font-weight:700;
+  line-height:1.1;
+}
+.fact .label{
+  display:block;
+  margin-top:7px;
+  color:var(--muted);
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:1.4px;
+  font-weight:700;
 }
 
-.subtitle { 
-  font-size: 12px; 
-  color: var(--gold); 
-  letter-spacing: 5px; 
-  text-transform: uppercase; 
-  font-weight: 700;
+/* ---------- ABOUT ---------- */
+.about-grid{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:60px;
+  align-items:start;
+  margin-top:42px;
+}
+.about-copy{
+  font-family:"Cormorant Garamond",serif;
+  font-size:27px;
+  line-height:1.45;
+  color:var(--green);
+}
+.about-copy p{margin:0 0 22px}
+.value-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+.value-card{
+  padding:22px;
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:linear-gradient(145deg,#fffdf8,#fbf5e8);
+  box-shadow:var(--shadow-soft);
+}
+.value-card .icon{font-size:20px}
+.value-card h3{
+  font-family:"Cormorant Garamond",serif;
+  font-size:22px;
+  color:var(--green);
+  margin:8px 0 5px;
+}
+.value-card p{margin:0;color:var(--muted);font-size:12.5px}
+
+/* ---------- GRID CARDS ---------- */
+.two-col{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+  margin-top:42px;
+}
+.glass-card{
+  background:rgba(255,255,255,.50);
+  border:1px solid rgba(228,216,191,.95);
+  border-radius:26px;
+  padding:32px;
+  box-shadow:var(--shadow-soft);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+}
+.card-title{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  align-items:baseline;
+  margin-bottom:20px;
+}
+.card-title h3{
+  margin:0;
+  font-family:"Cormorant Garamond",serif;
+  font-size:31px;
+  color:var(--green);
+}
+.card-title span{
+  color:var(--gold);
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:1.6px;
+  font-weight:700;
+}
+.detail{
+  display:grid;
+  grid-template-columns:145px 1fr;
+  gap:15px;
+  padding:13px 0;
+  border-bottom:1px dashed var(--line);
+  font-size:13px;
+}
+.detail:last-child{border-bottom:0}
+.detail .key{color:var(--muted);font-weight:600}
+.detail .val{color:var(--ink);font-weight:500}
+.gotra-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:18px;
+}
+.gotra{
+  padding:15px;
+  border-radius:16px;
+  background:var(--gold-pale);
+  border:1px solid var(--line);
+}
+.gotra strong{display:block;color:var(--gold);font-size:10px;letter-spacing:1.4px;text-transform:uppercase}
+.gotra span{display:block;color:var(--green);font-family:"Cormorant Garamond",serif;font-size:22px;font-weight:700;margin-top:2px}
+
+/* ---------- FAMILY ---------- */
+.family-groups{display:grid;gap:16px}
+.family-group{
+  padding:18px;
+  border-radius:18px;
+  background:var(--gold-pale);
+  border:1px solid var(--line);
+}
+.family-group h4{
+  margin:0 0 10px;
+  color:var(--gold);
+  font-size:10px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+}
+.family-line{font-size:13px;color:var(--ink);margin:5px 0}
+
+/* ---------- CAREER ---------- */
+.career{
+  background:var(--green);
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+}
+.career .section-title{color:#fff}
+.career .section-lead{color:rgba(255,255,255,.66)}
+.timeline{
+  margin:52px auto 0;
+  max-width:1050px;
+  position:relative;
+}
+.timeline::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:0;bottom:0;
+  width:1px;
+  background:linear-gradient(to bottom,transparent,var(--gold),var(--gold),transparent);
+  transform:translateX(-50%);
+}
+.timeline-item{
+  width:50%;
+  padding:0 48px 34px 0;
+  position:relative;
+}
+.timeline-item:nth-child(even){
+  margin-left:50%;
+  padding:0 0 34px 48px;
+}
+.timeline-dot{
+  position:absolute;
+  top:3px;
+  right:-7px;
+  width:14px;height:14px;
+  border-radius:50%;
+  background:var(--gold);
+  border:3px solid var(--green);
+  box-shadow:0 0 0 1px rgba(184,148,82,.55);
+}
+.timeline-item:nth-child(even) .timeline-dot{left:-7px;right:auto}
+.timeline-card{
+  padding:22px 24px;
+  border:1px solid rgba(184,148,82,.28);
+  background:rgba(255,255,255,.055);
+  border-radius:20px;
+  transition:.25s ease;
+}
+.timeline-card:hover{
+  transform:translateY(-3px);
+  background:rgba(255,255,255,.09);
+  border-color:rgba(184,148,82,.55);
+}
+.timeline-company{
+  font-family:"Cormorant Garamond",serif;
+  font-size:29px;
+  color:#fff;
+  line-height:1;
+}
+.timeline-role{
+  margin-top:7px;
+  color:var(--gold-soft);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.5px;
+}
+.timeline-desc{
+  margin-top:8px;
+  color:rgba(255,255,255,.63);
+  font-size:12px;
 }
 
-/* Premium photo-led hero */
-.hero-profile {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 35px;
-  align-items: center;
-  max-width: 740px;
-  margin: 30px auto 0;
-  text-align: left;
+/* ---------- BUSINESS FEATURE ---------- */
+.business-feature{
+  margin-top:42px;
+  padding:46px;
+  border-radius:30px;
+  background:
+    radial-gradient(circle at 90% 20%,rgba(184,148,82,.20),transparent 25%),
+    linear-gradient(135deg,var(--green),var(--green-2));
+  color:#fff;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:30px;
+  align-items:center;
+  box-shadow:var(--shadow);
+}
+.business-feature .small{
+  color:var(--gold-soft);
+  text-transform:uppercase;
+  letter-spacing:3px;
+  font-size:10px;
+  font-weight:700;
+}
+.business-feature h3{
+  margin:8px 0;
+  font-family:"Cormorant Garamond",serif;
+  font-size:54px;
+  line-height:1;
+  color:#fff;
+}
+.business-feature p{margin:0;color:rgba(255,255,255,.70);max-width:650px;font-size:13px}
+.business-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.business-meta span{
+  border:1px solid rgba(184,148,82,.45);
+  border-radius:999px;
+  padding:7px 11px;
+  color:#f7f3ea;
+  font-size:10px;
+}
+.visit{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  white-space:nowrap;
+  background:var(--gold);
+  color:var(--green);
+  padding:13px 20px;
+  border-radius:999px;
+  text-decoration:none;
+  font-size:12px;
+  font-weight:700;
 }
 
-.profile-photo-wrap {
-  width: 190px;
-  height: 235px;
-  margin: 0 auto;
-  padding: 6px;
-  background: linear-gradient(145deg, var(--gold), #ecd4aa);
-  border-radius: 16px;
-  box-shadow: 0 16px 35px rgba(74,18,26,0.18);
+/* ---------- INTERESTS ---------- */
+.interest-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin-top:35px;
+}
+.interest{
+  min-height:145px;
+  padding:23px;
+  border-radius:22px;
+  border:1px solid var(--line);
+  background:rgba(255,253,248,.58);
+  box-shadow:var(--shadow-soft);
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+}
+.interest .emoji{font-size:24px;margin-bottom:auto}
+.interest h3{
+  margin:0;
+  font-family:"Cormorant Garamond",serif;
+  font-size:24px;
+  color:var(--green);
+}
+.interest p{margin:4px 0 0;color:var(--muted);font-size:11.5px}
+
+/* ---------- VISION ---------- */
+.vision-wrap{padding:0 0 90px}
+.vision{
+  background:var(--green);
+  color:#fff;
+  border-radius:34px;
+  padding:85px 40px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.vision::before,.vision::after{
+  content:"";
+  position:absolute;
+  border:1px solid rgba(184,148,82,.22);
+  border-radius:50%;
+}
+.vision::before{width:500px;height:500px;left:-250px;top:-250px}
+.vision::after{width:420px;height:420px;right:-220px;bottom:-250px}
+.vision .label{color:var(--gold-soft);text-transform:uppercase;letter-spacing:3px;font-size:10px;font-weight:700}
+.vision h2{
+  position:relative;z-index:1;
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(45px,6vw,76px);
+  line-height:1;
+  font-weight:600;
+  color:#fff;
+  margin:14px 0 18px;
+}
+.vision p{
+  position:relative;z-index:1;
+  max-width:760px;
+  margin:auto;
+  color:#f4eee3;
+  font-family:"Cormorant Garamond",serif;
+  font-size:25px;
+  line-height:1.4;
+}
+.vision-tags{
+  position:relative;z-index:1;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:28px;
+}
+.vision-tags span{
+  padding:8px 14px;
+  border:1px solid rgba(184,148,82,.45);
+  border-radius:999px;
+  font-size:11px;
+  color:var(--gold-soft);
 }
 
-.profile-photo {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: center top;
-  border-radius: 11px;
-  background: #eee5d5;
+/* ---------- PARTNER ---------- */
+.partner{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:55px;
+  align-items:center;
+}
+.partner-quote{
+  font-family:"Cormorant Garamond",serif;
+  font-size:52px;
+  line-height:1;
+  color:var(--green);
+}
+.partner-quote strong{color:var(--gold)}
+.preference-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.preference{
+  padding:19px;
+  background:rgba(255,253,248,.58);
+  border:1px solid var(--line);
+  border-radius:18px;
+}
+.preference strong{
+  display:block;
+  color:var(--green);
+  font-family:"Cormorant Garamond",serif;
+  font-size:22px;
+}
+.preference span{display:block;margin-top:4px;color:var(--muted);font-size:11.5px}
+
+/* ---------- GALLERY ---------- */
+.gallery{
+  display:grid;
+  grid-template-columns:1.5fr 1fr;
+  gap:14px;
+  margin-top:38px;
+}
+.gallery-main,.gallery-small{
+  overflow:hidden;
+  border-radius:24px;
+  background:#e9e1d2;
+  border:1px solid var(--line);
+  min-height:460px;
+}
+.gallery-small-wrap{display:grid;grid-template-rows:1fr 1fr;gap:14px}
+.gallery-small{min-height:0}
+.gallery img{
+  width:100%;height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:center top;
+}
+.gallery-placeholder{
+  height:100%;
+  min-height:220px;
+  display:grid;
+  place-items:center;
+  color:var(--muted);
+  font-size:11px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  background:linear-gradient(135deg,#f1eadf,#e7dece);
 }
 
-.photo-note {
-  text-align: center;
-  font-size: 11px;
-  color: #8c7355;
-  margin-top: 8px;
-  font-style: italic;
+/* ---------- CONTACT ---------- */
+.contact-section{
+  background:var(--green);
+  color:#fff;
+  padding:85px 0 110px;
+}
+.contact-section .section-title{color:#fff}
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+  margin-top:40px;
+}
+.contact-card{
+  padding:25px;
+  border-radius:22px;
+  border:1px solid rgba(184,148,82,.30);
+  background:rgba(255,255,255,.055);
+}
+.contact-card .label{
+  color:var(--gold-soft);
+  text-transform:uppercase;
+  letter-spacing:1.6px;
+  font-size:9px;
+  font-weight:700;
+}
+.contact-value{
+  margin:12px 0 20px;
+  font-family:"Cormorant Garamond",serif;
+  font-size:24px;
+  color:#fff;
+}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.action{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  padding:10px;
+  border-radius:999px;
+  text-decoration:none;
+  background:#fff;
+  color:var(--green);
+  font-size:11px;
+  font-weight:700;
+}
+.action.whatsapp{background:#25b65a;color:#fff}
+.action.share{grid-column:span 2;background:var(--gold)}
+.footer-note{
+  text-align:center;
+  margin-top:48px;
+  color:rgba(255,255,255,.45);
+  font-size:10px;
+  letter-spacing:1px;
 }
 
-.hero-copy .intro {
-  margin: 0 0 18px; 
-  line-height: 1.8; 
-  font-size: 15px;
-  color: #483832;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 19px;
+/* ---------- FLOATING DOCK ---------- */
+.floating-dock{
+  position:fixed;
+  right:24px;
+  bottom:24px;
+  z-index:90;
+  display:flex;
+  gap:6px;
+  padding:7px;
+  background:rgba(90,24,37,.78);
+  border:1px solid rgba(184,148,82,.35);
+  backdrop-filter:blur(16px);
+  border-radius:999px;
+  box-shadow:0 15px 35px rgba(0,0,0,.22);
+}
+.float-btn{
+  width:42px;height:42px;
+  display:grid;place-items:center;
+  border-radius:50%;
+  text-decoration:none;
+  font-size:16px;
+  background:#fff;
+  color:var(--green);
+}
+.float-btn.whatsapp{background:#25b65a;color:#fff}
+.float-btn.share{background:var(--gold);color:var(--green)}
+
+/* ---------- REVEAL ---------- */
+.reveal{
+  opacity:0;
+  transform:translateY(22px);
+  transition:opacity .7s ease,transform .7s ease;
+}
+.reveal.show{opacity:1;transform:none}
+
+/* ---------- MOBILE ---------- */
+@media(max-width:900px){
+  .nav-links{display:none}
+  .nav-menu{
+    display:block;
+    border:0;
+    background:rgba(255,255,255,.10);
+    color:#fff;
+    border-radius:50%;
+    width:38px;height:38px;
+  }
+  .hero{
+    min-height:auto;
+    padding:115px 24px 65px;
+  }
+  .hero-inner{grid-template-columns:1fr;gap:48px}
+  .hero-photo{width:min(88vw,390px)}
+  .hero-copy{text-align:center}
+  .hero-copy .intro{margin-left:auto;margin-right:auto}
+  .hero-pills{justify-content:center}
+  .hero-scroll{justify-content:center}
+  .facts{margin-top:0;padding-top:18px}
+  .facts-grid{grid-template-columns:1fr 1fr}
+  .about-grid,.partner{grid-template-columns:1fr;gap:35px}
+  .two-col{grid-template-columns:1fr}
+  .timeline::before{left:8px}
+  .timeline-item,.timeline-item:nth-child(even){
+    width:100%;
+    margin-left:0;
+    padding:0 0 26px 35px;
+  }
+  .timeline-dot,.timeline-item:nth-child(even) .timeline-dot{
+    left:1px;right:auto;
+  }
+  .business-feature{grid-template-columns:1fr;text-align:center;padding:35px 25px}
+  .business-feature p{margin-left:auto;margin-right:auto}
+  .business-meta{justify-content:center}
+  .interest-grid{grid-template-columns:1fr 1fr}
+  .preference-grid{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr}
+  .gallery-main{min-height:420px}
+  .gallery-small-wrap{height:420px}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .container{width:min(100% - 30px,1200px)}
+  .nav{top:10px;width:calc(100% - 20px)}
+  .nav-brand{font-size:20px}
+  .hero-copy h1{font-size:70px}
+  .hero-copy .quote{font-size:27px}
+  .facts-grid{gap:9px}
+  .fact{padding:16px 8px}
+  .fact .number{font-size:23px}
+  .fact .label{font-size:8px}
+  .section{padding:65px 0}
+  .glass-card{padding:22px}
+  .detail{grid-template-columns:1fr;gap:3px}
+  .detail .val{text-align:left}
+  .value-grid{grid-template-columns:1fr}
+  .interest-grid{grid-template-columns:1fr}
+  .vision{padding:65px 22px}
+  .vision p{font-size:21px}
+  .partner-quote{font-size:42px}
+  .gallery-main{min-height:360px}
+  .gallery-small-wrap{height:360px}
+  .floating-dock{right:12px;bottom:12px}
 }
 
-.hero-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.hero-meta span {
-  padding: 6px 14px;
-  border: 1px solid var(--gold-border);
-  border-radius: 999px;
-  background: #fffdf9;
-  color: var(--maroon);
-  font-size: 12px;
-  font-weight: 600;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-}
-
-/* Quick Snapshot Bar */
-.snapshot {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 30px 24px 0;
-  padding: 14px 18px;
-  background: var(--gold-light);
-  border-radius: 12px;
-  border: 1px solid var(--gold-border);
-}
-
-.snapshot-item {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--maroon-dark);
-  padding: 4px 12px;
-  border-right: 1px solid var(--gold-border);
-  letter-spacing: 0.3px;
-}
-.snapshot-item:last-child { border-right: none; }
-
-.content { padding: 32px; display: grid; gap: 24px; position: relative; z-index: 2; }
-
-.card {
-  border: 1px solid var(--gold-border); 
-  border-radius: 14px; 
-  overflow: hidden;
-  background: var(--card-bg);
-  box-shadow: 0 6px 20px rgba(74,18,26,0.03);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(74,18,26,0.08);
-}
-
-.card h2 {
-  margin: 0; 
-  padding: 14px 22px; 
-  color: #fff; 
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 21px;
-  letter-spacing: 0.8px; 
-  background: var(--maroon);
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  border-bottom: 2px solid var(--gold);
-}
-
-.card h2 svg {
-  width: 20px;
-  height: 20px;
-  fill: var(--gold);
-}
-
-.row {
-  display: grid; 
-  grid-template-columns: 230px 1fr; 
-  gap: 20px;
-  padding: 13px 22px; 
-  border-bottom: 1px solid #f6f0e4;
-  font-size: 14px;
-  align-items: center;
-}
-
-.row:last-child { border-bottom: 0; }
-
-.label-group {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.label-group svg {
-  width: 16px;
-  height: 16px;
-  fill: var(--gold);
-  flex-shrink: 0;
-}
-
-.label { font-weight: 600; color: #735343; }
-.value { line-height: 1.65; color: var(--ink); }
-
-/* Interactive Contact Section */
-.contact {
-  margin: 0 32px 36px; 
-  padding: 24px; 
-  border-radius: 14px;
-  background: var(--gold-light); 
-  border: 1px solid var(--gold-border);
-  display: grid; 
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 20px;
-  position: relative;
-  z-index: 2;
-}
-
-.contact-item { 
-  padding: 4px 10px; 
-  border-right: 1px solid var(--gold-border); 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.contact-item:last-child { border-right: 0; }
-
-.contact-item .top-label { 
-  font-size: 11px; 
-  text-transform: uppercase; 
-  letter-spacing: 1px; 
-  margin-bottom: 8px; 
-  font-weight: 700;
-  color: #735343;
-}
-
-.contact-item .value-block { 
-  font-weight: 600; 
-  font-size: 13.5px; 
-  margin-bottom: 14px;
-  color: var(--maroon-dark);
-}
-
-/* Action Buttons */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  background: var(--maroon);
-  color: #fff;
-  text-decoration: none;
-  font-size: 12px;
-  font-weight: 600;
-  padding: 9px 14px;
-  border-radius: 6px;
-  transition: background 0.2s ease, transform 0.1s ease;
-  width: 100%;
-  text-align: center;
-  letter-spacing: 0.5px;
-}
-
-.btn:hover {
-  background: var(--maroon-dark);
-  transform: translateY(-1px);
-}
-
-.btn svg {
-  width: 13px;
-  height: 13px;
-  fill: #fff;
-}
-
-footer {
-  text-align: center; 
-  padding: 22px; 
-  font-size: 12px; 
-  color: #7c634b;
-  border-top: 1px solid var(--line);
-  background: #f2ece1;
-  letter-spacing: 0.5px;
-}
-
-@media (max-width: 768px) {
-  .page { margin: 0; border: 0; border-radius: 0; }
-  h1 { font-size: 36px; }
-  .row { grid-template-columns: 1fr; gap: 4px; padding: 12px 18px; }
-  .content { padding: 18px; }
-  .contact { grid-template-columns: 1fr; margin: 0 16px 28px; gap: 20px; }
-  .contact-item { border-right: 0; border-bottom: 1px solid var(--gold-border); padding-bottom: 18px; }
-  .contact-item:last-child { border-bottom: 0; padding-bottom: 0; }
-  .snapshot { margin: 20px 16px 0; }
-  .snapshot-item { border-right: none; }
-  .hero-profile { grid-template-columns: 1fr; text-align: center; gap: 20px; }
-  .hero-copy .intro { text-align: center; font-size: 17px; }
-  .hero-meta { justify-content: center; }
-}
-
-@media print {
-  body { background: #fff; }
-  .page { box-shadow: none; border: none; margin: 0; max-width: 100%; }
-  .card { break-inside: avoid; box-shadow: none; }
-  .btn { display: none; }
+/* print */
+@media print{
+  .nav,.floating-dock{display:none!important}
+  body{background:#fff}
+  .hero{padding-top:40px}
+  .section{break-inside:avoid}
 }
 </style>
 </head>
+
 <body>
+<nav class="nav">
+  <div class="nav-brand">Ankit Jain</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#details">Details</a>
+    <a href="#family">Family</a>
+    <a href="#career">Journey</a>
+    <a href="#vision">Marriage</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <button class="nav-menu" aria-label="Open navigation" onclick="document.querySelector('.nav-links').classList.toggle('mobile-open')">☰</button>
+</nav>
+
 <main class="page">
-  <header>
-    <div class="motto">|| Om Shree Ganeshaya Namah &nbsp;|&nbsp; Om Jai Jinendra ||</div>
 
-    <div class="hero-profile">
-      <div>
-        <div class="profile-photo-wrap">
-          <img src="ankit-photo.jpeg" alt="Ankit Jain" class="profile-photo" loading="eager">
-        </div>
-        <div class="photo-note">Personal profile photograph</div>
-      </div>
-
-      <div class="hero-copy">
-        <h1>Ankit Jain</h1>
-        <div class="subtitle">Marriage Biodata</div>
-        <p class="intro">
-          An understanding and learning-oriented person who values family time, respect for others,
-          and the importance of loved ones. Looking forward to a balanced married life built on
-          understanding, emotions, mutual respect, and fun.
-        </p>
-
-        <div class="hero-meta">
-          <span>27 Years</span>
-          <span>5'5"</span>
-          <span>Jain</span>
-          <span>Indore, M.P.</span>
-        </div>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-photo reveal">
+      <div class="photo-frame">
+        <img src="ankit-photo.jpeg" alt="Ankit Jain" loading="eager">
+        <div class="photo-caption">Personal Profile</div>
       </div>
     </div>
 
-    <div class="snapshot">
-      <div class="snapshot-item">27 Years, 5'5"</div>
-      <div class="snapshot-item">Jain (Kawad Gotra)</div>
-      <div class="snapshot-item">BBA, MA &amp; Psychology Diploma</div>
-      <div class="snapshot-item">Businessman &amp; Creator</div>
-      <div class="snapshot-item">Indore, M.P.</div>
-    </div>
-  </header>
+    <div class="hero-copy reveal">
+      <div class="eyebrow">|| Om Shree Ganeshaya Namah &nbsp; | &nbsp; Om Jai Jinendra ||</div>
+      <h1>Ankit Jain</h1>
+      <div class="subtitle">Marriage Profile</div>
 
-  <div class="content">
-    <!-- Personal Info -->
-    <section class="card">
-      <h2>
-        <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-        Personal Information
-      </h2>
-      <div class="row">
-        <div class="label-group"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg><span class="label">Full Name</span></div>
-        <div class="value">Ankit Jain</div>
-      </div>
-      <div class="row">
-        <div class="label-group"><svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg><span class="label">Date of Birth</span></div>
-        <div class="value">21 September 1998</div>
-      </div>
-      <div class="row">
-        <div class="label-group"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg><span class="label">Time of Birth</span></div>
-        <div class="value">11:05 AM</div>
-      </div>
-      <div class="row">
-        <div class="label-group"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><span class="label">Place of Birth</span></div>
-        <div class="value">Burhanpur, Madhya Pradesh</div>
-      </div>
-      <div class="row">
-        <div class="label-group"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg><span class="label">Age</span></div>
-        <div class="value">27 Years</div>
-      </div>
-      <div class="row">
-        <div class="label-group"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg><span class="label">Height &amp; Physical</span></div>
-        <div class="value">5' 5" | Fair Complexion | B+ Blood Group</div>
-      </div>
-      <div class="row">
-        <div class="label-group"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg><span class="label">Languages Known</span></div>
-        <div class="value">Hindi, English</div>
-      </div>
-      <div class="row">
-        <div class="label-group"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg><span class="label">Diet &amp; Lifestyle</span></div>
-        <div class="value">Pure Vegetarian | Strictly No Smoking / No Alcohol</div>
-      </div>
-    </section>
-
-    <!-- Astro & Cultural -->
-    <section class="card">
-      <h2>
-        <svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.399 8.168-7.333-3.854-7.333 3.854 1.399-8.168-5.934-5.787 8.2-1.192z"/></svg>
-        Astro &amp; Cultural Details
-      </h2>
-      <div class="row">
-        <div class="label-group"><svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 16c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7z"/></svg><span class="label">Rashi &amp; Nakshatra</span></div>
-        <div class="value">Kanya (Virgo) | Hasta (Pada 4)</div>
-      </div>
-      <div class="row">
-        <div class="label-group"><svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg><span class="label">Manglik</span></div>
-        <div class="value">No</div>
-      </div>
-      <div class="row">
-        <div class="label-group"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span class="label">Religion &amp; Lineage</span></div>
-        <div class="value">Self: Kawad | Mama: Bafna | Dadi: Mandot | Nani: Jelmi</div>
-      </div>
-      <div class="row">
-        <div class="label-group"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg><span class="label">Family Lineage (Gotras)</span></div>
-        <div class="value">Paternal Grandmother: Mandot | Maternal Grandmother: Jelmi | Mama Gotra: Bafna</div>
-      </div>
-    </section>
-
-    <!-- Education & Career -->
-    <section class="card">
-      <h2>
-        <svg viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
-        Education &amp; Professional Journey
-      </h2>
-
-      <div class="row">
-        <div class="label-group"><svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg><span class="label">Education</span></div>
-        <div class="value">
-          <strong>MA — Psychology</strong> (2023), DAVV, Indore<br>
-          <strong>BBA — Marketing &amp; Sales</strong> (2021), DAVV, Indore<br>
-          <strong>Diploma in Psychology</strong> (2022)<br>
-          <strong>Diploma in Economics</strong><br>
-          <strong>Diploma in Product Management</strong>
-        </div>
+      <div class="quote">
+        “An understanding and learning-oriented person who values family time, respect for others, and the importance of loved ones.”
       </div>
 
-      <div class="row">
-        <div class="label-group"><svg viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-1.99.9-1.99 2L2 19c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6 0h-4V4h4v2z"/></svg><span class="label">Job Experience</span></div>
-        <div class="value">
-          <strong>BYJU'S</strong> — BDA (Business Development Associate)<br>
-          <strong>Futwork</strong> — BPO / BDA (DTDC, PW, Shop101)<br>
-          <strong>Futwork</strong> — Quality Analyst<br>
-          <strong>Amazon</strong> — Customer Support Associate<br>
-          <strong>Amazon</strong> — Quality Analyst<br>
-          <strong>Flipkart</strong> — Customer Support Associate
-        </div>
+      <div class="intro">
+        Looking for a balanced married life with understanding, fun, emotion and mutual respect.
       </div>
 
-      <div class="row">
-        <div class="label-group"><svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 16c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7zm1-11h-2v3H8v2h3v3h2v-3h3v-2h-3z"/></svg><span class="label">Business Experience</span></div>
-        <div class="value">
-          <strong>IDFC BO / MPONLINE Center</strong> — While schooling and college<br>
-          <strong>Bikaji Namkin</strong> — Distributor<br>
-          <strong>Kawad Swad</strong> — Owner<br>
-          <span>Website: kawadswad.in</span>
-        </div>
+      <div class="hero-pills">
+        <span class="pill">27 Years</span>
+        <span class="pill">5'5"</span>
+        <span class="pill">Jain</span>
+        <span class="pill">Kawad Gotra</span>
+        <span class="pill">Indore</span>
       </div>
 
-      <div class="row">
-        <div class="label-group"><svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 16c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7zm1-11h-2v3H8v2h3v3h2v-3h3v-2h-3z"/></svg><span class="label">Professional Focus</span></div>
-        <div class="value">Business, Food Manufacturing, Content Creation &amp; Teaching</div>
-      </div>
-    </section>
-
-    <!-- Family Background -->
-    <section class="card">
-      <h2>
-        <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
-        Family Background
-      </h2>
-      <div class="row">
-        <div class="label-group"><svg viewBox="0 0 24 24"><path d="M12 5.69l5 4.5V18h-2v-6H9v6H7v-7.81l5-4.5M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z"/></svg><span class="label">Family Type</span></div>
-        <div class="value">Joint Family</div>
-      </div>
-      <div class="row">
-        <div class="label-group"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg><span class="label">Parents</span></div>
-        <div class="value">Father: Shri Abhay Jain (Businessman) <br>Mother: Smt. Archana Jain (Businesswoman)</div>
-      </div>
-      <div class="row">
-        <div class="label-group"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg><span class="label">Grandparents</span></div>
-        <div class="value">Dada: Late. Kapurchand ji Jain | Dadi: Late. Madan Bai Jain<br>Nana: Late. Premchand ji Jain | Nani: Aasha Bai Jain</div>
-      </div>
-      <div class="row">
-        <div class="label-group"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg><span class="label">Uncles &amp; Aunts</span></div>
-        <div class="value">Uncle: Anil Kumar Jain | Aunty: Sunita Jain<br>Uncle: Sunil Kumar Jain | Aunty: Chanda Jain</div>
-      </div>
-      <div class="row">
-        <div class="label-group"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg><span class="label">Siblings &amp; Residence</span></div>
-        <div class="value">1 Sister (Unmarried) | No Brothers <br>Native &amp; Current Address: Katargaon, Indore, Madhya Pradesh</div>
-      </div>
-    </section>
-
-    <!-- Lifestyle & Interests -->
-    <section class="card">
-      <h2>
-        <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-        Lifestyle &amp; Interests
-      </h2>
-      <div class="row">
-        <div class="label-group"><svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 16c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7z"/></svg><span class="label">Interests</span></div>
-        <div class="value">Research &amp; Innovation, Building new ideas, Reading &amp; Travelling, Content Creation, Geopolitics</div>
-      </div>
-      <div class="row">
-        <div class="label-group"><svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg><span class="label">Values &amp; Vision</span></div>
-        <div class="value">Family time, mutual respect, understanding, and living a balanced life full of fun and positive emotions.</div>
-      </div>
-    </section>
-
-    <!-- Partner Preference -->
-    <section class="card">
-      <h2>
-        <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-        Partner Preference
-      </h2>
-      <div class="row">
-        <div class="label-group"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg><span class="label">Preferred Qualities</span></div>
-        <div class="value">Well-educated, cultured, family-oriented, from a respectable Jain family, with mutual respect as the most important foundation.</div>
-      </div>
-    </section>
-  </div>
-
-  <!-- Clickable Contact Actions -->
-  <div class="contact">
-    <div class="contact-item">
-      <div>
-        <div class="top-label">Primary Numbers</div>
-        <div class="value-block">+91 9424072904<br>+91 9993953715</div>
-      </div>
-      <a href="tel:+919424072904" class="btn">
-        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-        Call Primary
-      </a>
-    </div>
-
-    <div class="contact-item">
-      <div>
-        <div class="top-label">Alternative Number</div>
-        <div class="value-block">+91 9284709424</div>
-      </div>
-      <a href="tel:+919284709424" class="btn">
-        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-        Call Alt
-      </a>
-    </div>
-
-    <div class="contact-item">
-      <div>
-        <div class="top-label">Email ID</div>
-        <div class="value-block">ankjain222@gmail.com</div>
-      </div>
-      <a href="mailto:ankjain222@gmail.com" class="btn">
-        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-        Send Email
-      </a>
+      <a class="hero-scroll" href="#about"><span>↓</span> Explore Profile</a>
     </div>
   </div>
+</section>
 
-  <footer>Digital Marriage Biodata &bull; Prepared with care</footer>
+<section class="facts container">
+  <div class="facts-grid">
+    <div class="fact reveal"><span class="number">27</span><span class="label">Years of Age</span></div>
+    <div class="fact reveal"><span class="number">5'5"</span><span class="label">Height</span></div>
+    <div class="fact reveal"><span class="number">BBA + MA</span><span class="label">Education</span></div>
+    <div class="fact reveal"><span class="number">Owner</span><span class="label">Profession</span></div>
+  </div>
+</section>
+
+<section id="about" class="section soft-section">
+  <div class="container">
+    <div class="section-label">01 · Get to know me</div>
+    <h2 class="section-title">A little about Ankit</h2>
+
+    <div class="about-grid">
+      <div class="about-copy reveal">
+        <p>I am an understanding and learning-oriented person. I value family time, respecting others, and the importance of loved ones.</p>
+        <p>Outside work, I enjoy travelling. A normal day for me is a mix of work and chill, with an interest in learning and exploring new ideas.</p>
+      </div>
+
+      <div class="value-grid">
+        <div class="value-card reveal"><div class="icon">⌂</div><h3>Family Time</h3><p>Making time for family and the people who matter.</p></div>
+        <div class="value-card reveal"><div class="icon">✦</div><h3>Respect</h3><p>Respecting others and valuing mutual understanding.</p></div>
+        <div class="value-card reveal"><div class="icon">♡</div><h3>Loved Ones</h3><p>Giving importance to meaningful relationships.</p></div>
+        <div class="value-card reveal"><div class="icon">↗</div><h3>Learning</h3><p>Being open to learning and growing through life.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="details" class="section">
+  <div class="container">
+    <div class="section-label">02 · The essentials</div>
+    <h2 class="section-title">Personal & Cultural Details</h2>
+
+    <div class="two-col">
+      <div class="glass-card reveal">
+        <div class="card-title"><h3>Personal Information</h3><span>Profile</span></div>
+        <div class="detail"><span class="key">Full Name</span><span class="val">Ankit Jain</span></div>
+        <div class="detail"><span class="key">Date of Birth</span><span class="val">21 September 1998</span></div>
+        <div class="detail"><span class="key">Time of Birth</span><span class="val">11:05 AM</span></div>
+        <div class="detail"><span class="key">Place of Birth</span><span class="val">Burhanpur, Madhya Pradesh</span></div>
+        <div class="detail"><span class="key">Age</span><span class="val">27 Years</span></div>
+        <div class="detail"><span class="key">Height</span><span class="val">5'5"</span></div>
+        <div class="detail"><span class="key">Blood Group</span><span class="val">B+</span></div>
+        <div class="detail"><span class="key">Complexion</span><span class="val">Fair</span></div>
+        <div class="detail"><span class="key">Languages</span><span class="val">Hindi, English</span></div>
+        <div class="detail"><span class="key">Diet</span><span class="val">Pure Vegetarian</span></div>
+        <div class="detail"><span class="key">Habits</span><span class="val">Strictly No Smoking / No Alcohol</span></div>
+      </div>
+
+      <div class="glass-card reveal">
+        <div class="card-title"><h3>Astro & Cultural</h3><span>Lineage</span></div>
+        <div class="detail"><span class="key">Rashi</span><span class="val">Kanya (Virgo)</span></div>
+        <div class="detail"><span class="key">Nakshatra</span><span class="val">Hasta (Pada 4)</span></div>
+        <div class="detail"><span class="key">Manglik</span><span class="val">No</span></div>
+        <div class="detail"><span class="key">Religion</span><span class="val">Jain</span></div>
+
+        <div class="gotra-grid">
+          <div class="gotra"><strong>Self</strong><span>Kawad</span></div>
+          <div class="gotra"><strong>Mama</strong><span>Bafna</span></div>
+          <div class="gotra"><strong>Dadi</strong><span>Mandot</span></div>
+          <div class="gotra"><strong>Nani</strong><span>Jelmi</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="family" class="section soft-section">
+  <div class="container">
+    <div class="section-label">03 · Roots & relationships</div>
+    <h2 class="section-title">Family Background</h2>
+
+    <div class="two-col">
+      <div class="glass-card reveal">
+        <div class="card-title"><h3>Immediate Family</h3><span>Home</span></div>
+        <div class="detail"><span class="key">Family Type</span><span class="val">Joint Family</span></div>
+        <div class="detail"><span class="key">Father</span><span class="val">Shri Abhay Jain · Businessman</span></div>
+        <div class="detail"><span class="key">Mother</span><span class="val">Smt. Archana Jain · Businesswoman</span></div>
+        <div class="detail"><span class="key">Sibling</span><span class="val">1 Sister (Unmarried) · No Brothers</span></div>
+        <div class="detail"><span class="key">Native & Current</span><span class="val">Katargaon, Indore, Madhya Pradesh</span></div>
+      </div>
+
+      <div class="glass-card reveal">
+        <div class="card-title"><h3>Extended Family</h3><span>Family</span></div>
+        <div class="family-groups">
+          <div class="family-group">
+            <h4>Grandparents</h4>
+            <div class="family-line">Dada: Late. Kapurchand ji Jain</div>
+            <div class="family-line">Dadi: Late. Madan Bai Jain</div>
+            <div class="family-line">Nana: Late. Premchand ji Jain</div>
+            <div class="family-line">Nani: Aasha Bai Jain</div>
+          </div>
+          <div class="family-group">
+            <h4>Uncles & Aunts</h4>
+            <div class="family-line">Uncle: Anil Kumar Jain · Aunty: Sunita Jain</div>
+            <div class="family-line">Uncle: Sunil Kumar Jain · Aunty: Chanda Jain</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education" class="section">
+  <div class="container">
+    <div class="section-label">04 · Learning</div>
+    <h2 class="section-title">Education</h2>
+
+    <div class="two-col">
+      <div class="glass-card reveal">
+        <div class="card-title"><h3>Academic Qualifications</h3><span>Education</span></div>
+        <div class="detail"><span class="key">2023</span><span class="val"><strong>MA · Psychology</strong><br>DAVV, Indore</span></div>
+        <div class="detail"><span class="key">2021</span><span class="val"><strong>BBA · Marketing & Sales</strong><br>DAVV, Indore</span></div>
+        <div class="detail"><span class="key">2022</span><span class="val"><strong>Diploma in Psychology</strong></span></div>
+      </div>
+
+      <div class="glass-card reveal">
+        <div class="card-title"><h3>Additional Learning</h3><span>Diplomas</span></div>
+        <div class="detail"><span class="key">Diploma</span><span class="val">Economics</span></div>
+        <div class="detail"><span class="key">Diploma</span><span class="val">Product Management</span></div>
+        <div class="detail"><span class="key">Interest</span><span class="val">Learning and exploring new ideas</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="career" class="section career">
+  <div class="container">
+    <div class="section-label">05 · Work & experience</div>
+    <h2 class="section-title">Professional Journey</h2>
+    <p class="section-lead">A career path across business development, customer support, quality analysis, distribution and entrepreneurship.</p>
+
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-company">IDFC BO / MPONLINE Center</div>
+          <div class="timeline-role">While schooling and college</div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-company">BYJU'S</div>
+          <div class="timeline-role">BDA · Business Development Associate</div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-company">Futwork</div>
+          <div class="timeline-role">BPO / BDA</div>
+          <div class="timeline-desc">DTDC · PW · Shop101</div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-company">Futwork</div>
+          <div class="timeline-role">Quality Analyst</div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-company">Amazon</div>
+          <div class="timeline-role">Customer Support Associate</div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-company">Amazon</div>
+          <div class="timeline-role">Quality Analyst</div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-company">Flipkart</div>
+          <div class="timeline-role">Customer Support Associate</div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-company">Bikaji Namkin</div>
+          <div class="timeline-role">Distributor</div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-company">Kawad Swad</div>
+          <div class="timeline-role">Owner</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-label">06 · Entrepreneurship</div>
+    <h2 class="section-title">Building Something of My Own</h2>
+
+    <div class="business-feature reveal">
+      <div>
+        <div class="small">Kawad Swad</div>
+        <h3>Owner</h3>
+        <p>Food manufacturing, brand development, digital content creation and teaching.</p>
+        <div class="business-meta">
+          <span>Food Manufacturing</span>
+          <span>Brand Building</span>
+          <span>Content Creation</span>
+          <span>Teaching</span>
+        </div>
+      </div>
+      <a class="visit" href="https://kawadswad.in" target="_blank" rel="noopener">Visit Website →</a>
+    </div>
+  </div>
+</section>
+
+<section class="section soft-section">
+  <div class="container">
+    <div class="section-label">07 · Outside work</div>
+    <h2 class="section-title">Lifestyle & Interests</h2>
+    <p class="section-lead">The things I enjoy exploring, learning and spending time with.</p>
+
+    <div class="interest-grid">
+      <div class="interest reveal"><div class="emoji">✈</div><h3>Travel</h3><p>Exploring places and experiences.</p></div>
+      <div class="interest reveal"><div class="emoji">⌕</div><h3>Research & Innovation</h3><p>Exploring ideas and possibilities.</p></div>
+      <div class="interest reveal"><div class="emoji">◌</div><h3>Reading</h3><p>Learning through books and ideas.</p></div>
+      <div class="interest reveal"><div class="emoji">✦</div><h3>Content Creation</h3><p>Creating and sharing digital content.</p></div>
+      <div class="interest reveal"><div class="emoji">◎</div><h3>Geopolitics</h3><p>Learning through observation and exploration.</p></div>
+      <div class="interest reveal"><div class="emoji">＋</div><h3>New Ideas</h3><p>Building and exploring new products and concepts.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="vision" class="section">
+  <div class="container vision-wrap">
+    <div class="vision reveal">
+      <div class="label">08 · Marriage Vision</div>
+      <h2>Balance & Understanding</h2>
+      <p>A good marriage, to me, is a balanced life built with fun, emotion, respect and mutual understanding.</p>
+      <div class="vision-tags">
+        <span>Balance</span><span>Understanding</span><span>Fun</span><span>Emotion</span><span>Respect</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section soft-section">
+  <div class="container">
+    <div class="partner">
+      <div class="reveal">
+        <div class="section-label">09 · What I value in a partner</div>
+        <div class="partner-quote">“<strong>Understanding</strong> comes first.”</div>
+      </div>
+
+      <div class="preference-grid">
+        <div class="preference reveal"><strong>Understanding</strong><span>The quality that matters above all others.</span></div>
+        <div class="preference reveal"><strong>Respect</strong><span>Mutual respect and a good understanding of each other.</span></div>
+        <div class="preference reveal"><strong>Education</strong><span>Appreciated, but not compulsory.</span></div>
+        <div class="preference reveal"><strong>Appearance</strong><span>Somewhat important.</span></div>
+        <div class="preference reveal"><strong>Family Background</strong><span>Compatible and comfortable family background.</span></div>
+        <div class="preference reveal"><strong>Family Values</strong><span>Family-oriented and respectful nature.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-label">10 · Moments</div>
+    <h2 class="section-title">Glimpses</h2>
+    <p class="section-lead">The gallery is ready for personal photographs. Only your own photographs should be placed here.</p>
+
+    <div class="gallery">
+      <div class="gallery-main reveal">
+        <img src="ankit-photo.jpeg" alt="Ankit Jain portrait">
+      </div>
+      <div class="gallery-small-wrap">
+        <div class="gallery-small reveal"><div class="gallery-placeholder">Add Personal Photograph</div></div>
+        <div class="gallery-small reveal"><div class="gallery-placeholder">Add Travel / Life Photograph</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact-section">
+  <div class="container">
+    <div class="section-label">11 · Connect</div>
+    <h2 class="section-title">Connect</h2>
+
+    <div class="contact-grid">
+      <div class="contact-card reveal">
+        <div class="label">Primary Numbers</div>
+        <div class="contact-value">+91 9424072904<br>+91 9993953715</div>
+        <div class="actions">
+          <a class="action" href="tel:+919424072904">Call</a>
+          <a class="action whatsapp" href="https://wa.me/919424072904" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="contact-card reveal">
+        <div class="label">Alternative Number</div>
+        <div class="contact-value">+91 9284709424</div>
+        <div class="actions">
+          <a class="action" href="tel:+919284709424">Call</a>
+          <a class="action whatsapp" href="https://wa.me/919284709424" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">Digital Marriage Profile · Prepared with care</div>
+  </div>
+</section>
+
 </main>
+
+<div class="floating-dock">
+  <a class="float-btn" href="tel:+919424072904" aria-label="Call">☎</a>
+  <a class="float-btn whatsapp" href="https://wa.me/919424072904" target="_blank" rel="noopener" aria-label="WhatsApp">✆</a>
+  <button class="float-btn share" onclick="shareProfile()" aria-label="Share profile">↗</button>
+</div>
+
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const photo = document.querySelector(".profile-photo");
-  if (!photo) return;
-  photo.addEventListener("error", function () {
-    this.style.display = "none";
-    this.parentElement.style.background =
-      "linear-gradient(145deg, #f4ecdf, #e7d8bd)";
-    this.parentElement.setAttribute("aria-label", "Profile photograph placeholder");
+function shareProfile(){
+  const shareData = {
+    title: "Ankit Jain | Marriage Profile",
+    text: "Ankit Jain - Digital Marriage Profile",
+    url: window.location.href
+  };
+  if(navigator.share){
+    navigator.share(shareData).catch(()=>{});
+  }else if(navigator.clipboard){
+    navigator.clipboard.writeText(window.location.href).then(()=>{
+      alert("Profile link copied.");
+    }).catch(()=>{
+      prompt("Copy this profile link:", window.location.href);
+    });
+  }else{
+    prompt("Copy this profile link:", window.location.href);
+  }
+}
+
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+      observer.unobserve(entry.target);
+    }
   });
+},{threshold:.10});
+
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+
+const navLinks = document.querySelector(".nav-links");
+document.querySelector(".nav-menu").addEventListener("click",()=>{
+  navLinks.style.display = navLinks.style.display === "flex" ? "" : "flex";
+  navLinks.style.position = "absolute";
+  navLinks.style.top = "58px";
+  navLinks.style.right = "0";
+  navLinks.style.flexDirection = "column";
+  navLinks.style.alignItems = "stretch";
+  navLinks.style.padding = "8px";
+  navLinks.style.background = "rgba(16,47,42,.96)";
+  navLinks.style.borderRadius = "18px";
 });
 </script>
 </body>
