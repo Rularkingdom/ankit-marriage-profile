@@ -5,9 +5,37 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ankit Jain | Marriage Profile</title>
 <meta name="description" content="Ankit Jain - Digital Marriage Profile">
+<meta name="theme-color" content="#5A1825">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Ankit Jain | Marriage Profile">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://rularkingdom.github.io/ankit-marriage-profile/">
+
+<!-- Social / WhatsApp / Facebook / LinkedIn link preview -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Ankit Jain | Marriage Profile">
+<meta property="og:description" content="Jai Jinendra · A digital marriage profile of Ankit Jain">
+<meta property="og:url" content="https://rularkingdom.github.io/ankit-marriage-profile/">
+<meta property="og:site_name" content="Ankit Jain | Marriage Profile">
+<meta property="og:image" content="https://rularkingdom.github.io/ankit-marriage-profile/ankit-photo.jpeg">
+<meta property="og:image:secure_url" content="https://rularkingdom.github.io/ankit-marriage-profile/ankit-photo.jpeg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:alt" content="Ankit Jain - Marriage Profile">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="1500">
+
+<!-- Twitter / X preview -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ankit Jain | Marriage Profile">
+<meta name="twitter:description" content="Jai Jinendra · A digital marriage profile of Ankit Jain">
+<meta name="twitter:image" content="https://rularkingdom.github.io/ankit-marriage-profile/ankit-photo.jpeg">
+<meta name="twitter:image:alt" content="Ankit Jain - Marriage Profile">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="ankit-photo.jpeg" type="image/jpeg">
 
 <style>
 :root{
@@ -3210,6 +3238,16 @@ section[id]{
 
 body.chooser-open{overflow:hidden}
 </style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"Ankit Jain",
+  "url":"https://rularkingdom.github.io/ankit-marriage-profile/",
+  "image":"https://rularkingdom.github.io/ankit-marriage-profile/ankit-photo.jpeg",
+  "description":"Digital marriage profile of Ankit Jain."
+}
+</script>
 </head>
 
 <body>
@@ -3740,21 +3778,23 @@ function closeContactChooser(){
 document.addEventListener('keydown',e=>{if(e.key==='Escape') closeContactChooser();});
 
 function shareProfile(){
+  const profileUrl = "https://rularkingdom.github.io/ankit-marriage-profile/";
   const shareData = {
     title: "Ankit Jain | Marriage Profile",
-    text: "Ankit Jain - Digital Marriage Profile",
-    url: window.location.href
+    text: "Jai Jinendra · Ankit Jain - Digital Marriage Profile",
+    url: profileUrl
   };
+
   if(navigator.share){
     navigator.share(shareData).catch(()=>{});
   }else if(navigator.clipboard){
-    navigator.clipboard.writeText(window.location.href).then(()=>{
+    navigator.clipboard.writeText(profileUrl).then(()=>{
       alert("Profile link copied.");
     }).catch(()=>{
-      prompt("Copy this profile link:", window.location.href);
+      prompt("Copy this profile link:", profileUrl);
     });
   }else{
-    prompt("Copy this profile link:", window.location.href);
+    prompt("Copy this profile link:", profileUrl);
   }
 }
 
