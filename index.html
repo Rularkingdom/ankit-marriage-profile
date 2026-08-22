@@ -1536,6 +1536,1550 @@ body{
   }
 }
 
+
+/* =========================================================
+   MOBILE-FIRST REFINEMENT V7
+   Optimized for 320px–768px phones and small tablets.
+   ========================================================= */
+
+/* Better anchor positioning under the fixed navigation */
+[id]{
+  scroll-margin-top:88px;
+}
+
+/* Prevent accidental horizontal overflow from decorative artwork */
+html,body{
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden;
+}
+
+/* Touch devices do not need hover transforms */
+@media (hover:none){
+  .contact-card:hover,
+  .timeline-card:hover,
+  .gallery-card:hover .gallery-frame img,
+  .gallery-main:hover img,
+  .gallery-small:hover img,
+  .contact-action:hover{
+    transform:none;
+    filter:none;
+  }
+}
+
+@media (max-width:900px){
+
+  /* ---------- NAVIGATION ---------- */
+  .nav{
+    top:max(8px, env(safe-area-inset-top));
+    width:calc(100% - 20px);
+    padding:8px 9px 8px 15px;
+    min-height:52px;
+    border-radius:18px;
+  }
+
+  .nav-brand{
+    font-size:21px;
+    line-height:1;
+    white-space:nowrap;
+  }
+
+  .nav-menu{
+    display:grid;
+    place-items:center;
+    width:42px;
+    height:42px;
+    min-width:42px;
+    padding:0;
+    font-size:20px;
+    line-height:1;
+    cursor:pointer;
+    -webkit-tap-highlight-color:transparent;
+  }
+
+  .nav.menu-open .nav-links{
+    top:58px;
+    right:0;
+    width:min(240px, calc(100vw - 28px));
+    min-width:0;
+    padding:7px;
+    gap:3px;
+    border-radius:16px;
+    box-shadow:0 20px 45px rgba(0,0,0,.28);
+  }
+
+  .nav.menu-open .nav-links a{
+    min-height:44px;
+    display:flex;
+    align-items:center;
+    padding:10px 13px;
+    font-size:11px;
+    border-radius:11px;
+  }
+
+  .nav.menu-open .nav-links a:active{
+    background:rgba(255,255,255,.13);
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    min-height:0;
+    padding:
+      calc(88px + env(safe-area-inset-top))
+      16px
+      52px;
+  }
+
+  .hero-inner{
+    grid-template-columns:1fr;
+    gap:30px;
+    width:100%;
+  }
+
+  .hero-photo{
+    width:min(82vw,330px);
+    max-width:330px;
+    margin:0 auto;
+  }
+
+  .hero-photo::before{
+    inset:-9px -9px 9px 9px;
+    border-radius:22px;
+  }
+
+  .hero-photo::after{
+    inset:-18px;
+  }
+
+  .photo-frame{
+    padding:6px;
+    border-radius:22px;
+    box-shadow:0 22px 48px rgba(0,0,0,.32);
+  }
+
+  .photo-frame img{
+    border-radius:17px;
+  }
+
+  .photo-caption{
+    left:14px;
+    bottom:14px;
+    padding:7px 10px;
+    font-size:8px;
+    letter-spacing:.9px;
+  }
+
+  .hero-copy{
+    width:100%;
+  }
+
+  .hero-copy .eyebrow{
+    font-size:9px;
+    letter-spacing:2.8px;
+    margin-bottom:10px;
+  }
+
+  .hero-copy h1{
+    font-size:clamp(52px,16vw,70px);
+    line-height:.9;
+    letter-spacing:-1px;
+    word-break:normal;
+  }
+
+  .hero-copy .subtitle{
+    margin:10px 0 18px;
+    font-size:9px;
+    letter-spacing:3px;
+  }
+
+  .hero-copy .quote{
+    max-width:600px;
+    margin:0 auto 17px;
+    font-size:clamp(22px,6.4vw,29px);
+    line-height:1.22;
+  }
+
+  .hero-copy .intro{
+    max-width:430px;
+    margin:0 auto;
+    font-size:12px;
+    line-height:1.65;
+  }
+
+  .hero-pills{
+    justify-content:center;
+    gap:7px;
+    margin-top:20px;
+  }
+
+  .pill{
+    padding:7px 10px;
+    font-size:9px;
+    line-height:1.2;
+  }
+
+  .hero-scroll{
+    margin-top:24px;
+    font-size:9px;
+    letter-spacing:1.5px;
+  }
+
+  .hero-scroll span{
+    width:28px;
+    height:28px;
+  }
+
+  /* ---------- CONTAINERS / SECTIONS ---------- */
+  .container{
+    width:min(calc(100% - 30px),1200px);
+  }
+
+  .section{
+    padding:58px 0;
+  }
+
+  .section::after{
+    bottom:14px;
+    width:78px;
+  }
+
+  .section:not(.career):not(.contact-section)::before{
+    top:17px;
+    right:5%;
+    font-size:9px;
+    letter-spacing:2px;
+  }
+
+  .section-label{
+    font-size:9px;
+    letter-spacing:2px;
+    margin-bottom:7px;
+  }
+
+  .section-title{
+    font-size:clamp(36px,11vw,48px);
+    line-height:.98;
+  }
+
+  .section-lead{
+    margin-top:12px;
+    font-size:12px;
+    line-height:1.6;
+  }
+
+  /* ---------- QUICK FACTS ---------- */
+  .facts{
+    margin-top:0;
+    padding-top:12px;
+  }
+
+  .facts-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:8px;
+  }
+
+  .fact{
+    min-width:0;
+    padding:15px 7px;
+    border-radius:15px;
+  }
+
+  .fact .number{
+    font-size:clamp(21px,6vw,27px);
+    overflow-wrap:anywhere;
+  }
+
+  .fact .label{
+    margin-top:5px;
+    font-size:7.5px;
+    letter-spacing:.9px;
+    line-height:1.25;
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{
+    grid-template-columns:1fr;
+    gap:25px;
+    margin-top:28px;
+  }
+
+  .about-copy{
+    font-size:23px;
+    line-height:1.38;
+  }
+
+  .about-copy p{
+    margin-bottom:16px;
+  }
+
+  .value-grid{
+    grid-template-columns:1fr 1fr;
+    gap:9px;
+  }
+
+  .value-card{
+    padding:15px;
+    border-radius:15px;
+  }
+
+  .value-card .icon{
+    font-size:17px;
+  }
+
+  .value-card h3{
+    font-size:19px;
+    margin:6px 0 4px;
+  }
+
+  .value-card p{
+    font-size:10.5px;
+    line-height:1.45;
+  }
+
+  /* ---------- DETAILS / FAMILY / EDUCATION ---------- */
+  .two-col{
+    grid-template-columns:1fr;
+    gap:14px;
+    margin-top:28px;
+  }
+
+  .glass-card{
+    padding:18px;
+    border-radius:19px;
+  }
+
+  .card-title{
+    gap:8px;
+    margin-bottom:12px;
+    flex-wrap:wrap;
+  }
+
+  .card-title h3{
+    font-size:26px;
+    line-height:1;
+  }
+
+  .card-title span{
+    font-size:8px;
+    letter-spacing:1px;
+  }
+
+  .detail{
+    grid-template-columns:minmax(92px,.75fr) minmax(0,1.25fr);
+    gap:10px;
+    padding:10px 0;
+    font-size:11.5px;
+    line-height:1.45;
+  }
+
+  .detail .key,
+  .detail .val{
+    min-width:0;
+    overflow-wrap:anywhere;
+  }
+
+  .gotra-grid{
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+    margin-top:13px;
+  }
+
+  .gotra{
+    padding:11px;
+    border-radius:12px;
+  }
+
+  .gotra strong{
+    font-size:8px;
+    letter-spacing:1px;
+  }
+
+  .gotra span{
+    font-size:19px;
+  }
+
+  .family-groups{
+    gap:10px;
+  }
+
+  .family-group{
+    padding:14px;
+    border-radius:14px;
+  }
+
+  .family-group h4{
+    font-size:8px;
+    margin-bottom:7px;
+  }
+
+  .family-line{
+    font-size:11.5px;
+    line-height:1.45;
+  }
+
+  /* ---------- CAREER TIMELINE ---------- */
+  .timeline{
+    margin-top:32px;
+  }
+
+  .timeline::before{
+    left:7px;
+  }
+
+  .timeline-item,
+  .timeline-item:nth-child(even){
+    width:100%;
+    margin-left:0;
+    padding:0 0 18px 28px;
+  }
+
+  .timeline-dot,
+  .timeline-item:nth-child(even) .timeline-dot{
+    left:1px;
+    right:auto;
+    width:12px;
+    height:12px;
+    border-width:2px;
+  }
+
+  .timeline-card{
+    padding:16px;
+    border-radius:15px;
+  }
+
+  .timeline-company{
+    font-size:24px;
+    line-height:1.05;
+  }
+
+  .timeline-role{
+    margin-top:6px;
+    font-size:10px;
+    line-height:1.4;
+  }
+
+  .timeline-desc{
+    font-size:10.5px;
+    line-height:1.45;
+  }
+
+  /* ---------- BUSINESS ---------- */
+  .business-feature{
+    grid-template-columns:1fr;
+    gap:18px;
+    margin-top:28px;
+    padding:27px 19px;
+    border-radius:21px;
+    text-align:center;
+  }
+
+  .business-feature h3{
+    font-size:43px;
+  }
+
+  .business-feature p{
+    font-size:11px;
+    line-height:1.55;
+  }
+
+  .business-meta{
+    justify-content:center;
+    gap:6px;
+  }
+
+  .business-meta span{
+    padding:6px 9px;
+    font-size:8px;
+  }
+
+  .visit{
+    width:100%;
+    min-height:44px;
+    padding:11px 16px;
+    font-size:10px;
+  }
+
+  /* ---------- INTERESTS ---------- */
+  .interest-grid{
+    grid-template-columns:1fr 1fr;
+    gap:9px;
+    margin-top:26px;
+  }
+
+  .interest{
+    min-height:125px;
+    padding:16px;
+    border-radius:16px;
+  }
+
+  .interest .emoji{
+    font-size:20px;
+  }
+
+  .interest h3{
+    font-size:20px;
+  }
+
+  .interest p{
+    font-size:10px;
+    line-height:1.4;
+  }
+
+  /* ---------- VISION ---------- */
+  .vision-wrap{
+    padding-bottom:58px;
+  }
+
+  .vision{
+    padding:55px 18px;
+    border-radius:23px;
+  }
+
+  .vision::before{
+    width:280px;
+    height:280px;
+    left:-180px;
+    top:-150px;
+  }
+
+  .vision::after{
+    width:250px;
+    height:250px;
+    right:-170px;
+    bottom:-160px;
+  }
+
+  .vision h2{
+    font-size:clamp(40px,12vw,58px);
+    margin:11px 0 14px;
+  }
+
+  .vision p{
+    font-size:19px;
+    line-height:1.4;
+  }
+
+  .vision-tags{
+    gap:6px;
+    margin-top:20px;
+  }
+
+  .vision-tags span{
+    padding:6px 9px;
+    font-size:8.5px;
+  }
+
+  /* ---------- PARTNER ---------- */
+  .partner{
+    grid-template-columns:1fr;
+    gap:25px;
+  }
+
+  .partner-quote{
+    font-size:39px;
+    line-height:.98;
+  }
+
+  .preference-grid{
+    grid-template-columns:1fr;
+    gap:8px;
+  }
+
+  .preference{
+    padding:14px;
+    border-radius:14px;
+  }
+
+  .preference strong{
+    font-size:20px;
+  }
+
+  .preference span{
+    font-size:10.5px;
+    line-height:1.45;
+  }
+
+  /* ---------- GALLERY ---------- */
+  .gallery{
+    grid-template-columns:1fr;
+    gap:12px;
+    margin-top:28px;
+  }
+
+  .gallery-feature .gallery-frame{
+    min-height:0;
+  }
+
+  .gallery-side{
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+
+  .gallery-card{
+    border-radius:18px;
+  }
+
+  .gallery-frame,
+  .gallery-feature .gallery-frame,
+  .gallery-side .gallery-frame{
+    min-height:0;
+    padding:10px;
+  }
+
+  .gallery-frame img{
+    width:100%;
+    height:auto;
+    max-height:none;
+    object-fit:contain !important;
+    border-radius:13px;
+  }
+
+  .gallery-card figcaption{
+    padding:9px 11px 11px;
+    font-size:9.5px;
+  }
+
+  .gallery-card figcaption span{
+    width:23px;
+    height:23px;
+    flex-basis:23px;
+    font-size:12px;
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid{
+    grid-template-columns:1fr;
+    gap:11px;
+    margin-top:27px;
+  }
+
+  .contact-card,
+  .email-card{
+    grid-column:auto !important;
+    min-height:0;
+    padding:18px;
+    border-radius:19px;
+    gap:12px;
+  }
+
+  .contact-icon{
+    flex:0 0 40px;
+    width:40px;
+    height:40px;
+    border-radius:12px;
+  }
+
+  .contact-icon svg{
+    width:18px;
+    height:18px;
+  }
+
+  .contact-card .label{
+    font-size:8px;
+    letter-spacing:1.3px;
+  }
+
+  .contact-value{
+    margin:7px 0 14px;
+    font-size:20px;
+    line-height:1.25;
+  }
+
+  .email-value{
+    font-size:13px !important;
+    line-height:1.35;
+    overflow-wrap:anywhere;
+  }
+
+  .contact-actions{
+    grid-template-columns:1fr 1fr;
+    gap:6px;
+  }
+
+  .contact-action{
+    min-height:40px;
+    padding:8px 7px;
+    font-size:9px;
+  }
+
+  .footer-note{
+    margin-top:30px;
+    padding-bottom:7px;
+    font-size:8px;
+    line-height:1.4;
+  }
+
+  /* ---------- FLOATING DOCK ---------- */
+  .floating-dock{
+    left:50%;
+    right:auto;
+    bottom:max(10px, env(safe-area-inset-bottom));
+    transform:translateX(-50%);
+    gap:5px;
+    padding:6px;
+    border-radius:18px;
+    max-width:calc(100vw - 24px);
+  }
+
+  .float-btn{
+    width:40px;
+    height:40px;
+    min-width:40px;
+    font-size:15px;
+  }
+}
+
+@media(max-width:380px){
+
+  .nav{
+    width:calc(100% - 14px);
+    padding-left:12px;
+  }
+
+  .nav-brand{
+    font-size:19px;
+  }
+
+  .hero{
+    padding-left:12px;
+    padding-right:12px;
+  }
+
+  .hero-photo{
+    width:min(78vw,300px);
+  }
+
+  .hero-copy h1{
+    font-size:55px;
+  }
+
+  .hero-copy .quote{
+    font-size:22px;
+  }
+
+  .hero-copy .intro{
+    font-size:11px;
+  }
+
+  .pill{
+    padding:6px 8px;
+    font-size:8px;
+  }
+
+  .container{
+    width:calc(100% - 24px);
+  }
+
+  .section{
+    padding:52px 0;
+  }
+
+  .section-title{
+    font-size:36px;
+  }
+
+  .value-grid,
+  .interest-grid{
+    grid-template-columns:1fr;
+  }
+
+  .fact{
+    padding:13px 5px;
+  }
+
+  .fact .number{
+    font-size:21px;
+  }
+
+  .detail{
+    grid-template-columns:1fr;
+    gap:2px;
+    padding:9px 0;
+  }
+
+  .detail .key{
+    font-size:9px;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+  }
+
+  .detail .val{
+    font-size:11.5px;
+  }
+
+  .gotra span{
+    font-size:18px;
+  }
+
+  .business-feature h3{
+    font-size:38px;
+  }
+
+  .partner-quote{
+    font-size:36px;
+  }
+
+  .contact-card{
+    padding:15px;
+  }
+
+  .contact-value{
+    font-size:18px;
+  }
+
+  .email-value{
+    font-size:12px !important;
+  }
+
+  .contact-actions{
+    grid-template-columns:1fr;
+  }
+
+  .contact-action{
+    width:100%;
+  }
+}
+
+/* Respect users who disable motion at OS level */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+    scroll-behavior:auto !important;
+  }
+  .reveal{
+    opacity:1 !important;
+    transform:none !important;
+  }
+}
+
+
+/* =========================================================
+   MOBILE STORY SCROLL V8
+   Purpose: make the phone experience feel like one connected
+   story instead of a stack of independent sections.
+   ========================================================= */
+
+html{
+  scroll-padding-top:82px;
+}
+
+section[id]{
+  scroll-margin-top:82px;
+}
+
+/* Quiet progress rail: visible only on phones. */
+.mobile-story-progress{
+  display:none;
+}
+
+@media(max-width:560px){
+  html{
+    scroll-padding-top:78px;
+  }
+
+  body{
+    background-attachment:scroll;
+    -webkit-overflow-scrolling:touch;
+  }
+
+  .page{
+    border-left:0;
+    border-right:0;
+  }
+
+  /* Fixed rail gives the visitor a sense of where the story is going. */
+  .mobile-story-progress{
+    position:fixed;
+    right:5px;
+    top:50%;
+    transform:translateY(-50%);
+    z-index:88;
+    width:27px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:5px;
+    pointer-events:none;
+  }
+
+  .story-progress-track{
+    position:absolute;
+    top:12px;
+    bottom:12px;
+    left:50%;
+    width:1px;
+    transform:translateX(-50%);
+    background:linear-gradient(to bottom,transparent,rgba(184,148,82,.42) 8%,rgba(184,148,82,.42) 92%,transparent);
+  }
+
+  .mobile-story-progress a{
+    position:relative;
+    width:20px;
+    height:20px;
+    display:grid;
+    place-items:center;
+    text-decoration:none;
+    pointer-events:auto;
+    border-radius:50%;
+    color:rgba(90,24,37,.46);
+    background:rgba(255,250,239,.78);
+    border:1px solid rgba(184,148,82,.28);
+    box-shadow:0 3px 10px rgba(60,30,15,.08);
+    font-size:7px;
+    font-weight:800;
+    line-height:1;
+    transition:.22s ease;
+    backdrop-filter:blur(8px);
+  }
+
+  .mobile-story-progress a.active{
+    width:26px;
+    height:26px;
+    margin-left:-3px;
+    color:#fffaf1;
+    background:var(--green);
+    border-color:var(--gold);
+    box-shadow:0 5px 16px rgba(60,15,25,.25);
+    font-size:8px;
+  }
+
+  /* The rail should never obscure important text. */
+  .container{
+    width:min(100% - 34px,1200px);
+  }
+
+  /* ---------------- HERO ---------------- */
+  .hero{
+    min-height:92svh;
+    padding:92px 18px 34px;
+    display:flex;
+    align-items:center;
+  }
+
+  .hero-inner{
+    width:100%;
+    grid-template-columns:1fr;
+    gap:25px;
+  }
+
+  .hero-photo{
+    width:min(62vw,285px);
+    margin:0 auto;
+  }
+
+  .hero-photo::before{
+    inset:-10px -10px 10px 10px;
+    border-radius:24px;
+  }
+
+  .photo-frame{
+    padding:6px;
+    border-radius:22px;
+    box-shadow:0 24px 50px rgba(0,0,0,.30);
+  }
+
+  .photo-frame img{
+    border-radius:17px;
+  }
+
+  .photo-caption{
+    left:14px;
+    bottom:14px;
+    padding:7px 11px;
+    font-size:8px;
+  }
+
+  .hero-copy{
+    text-align:center;
+  }
+
+  .hero-copy .eyebrow{
+    font-size:9px;
+    letter-spacing:2.2px;
+    margin-bottom:10px;
+  }
+
+  .hero-copy h1{
+    font-size:clamp(52px,15vw,68px);
+    letter-spacing:-1.2px;
+    line-height:.86;
+  }
+
+  .hero-copy .subtitle{
+    margin:11px 0 15px;
+    font-size:9px;
+    letter-spacing:3px;
+  }
+
+  .hero-copy .quote{
+    max-width:330px;
+    margin:0 auto 13px;
+    font-size:21px;
+    line-height:1.22;
+  }
+
+  .hero-copy .intro{
+    max-width:330px;
+    font-size:12px;
+    line-height:1.55;
+  }
+
+  .hero-pills{
+    justify-content:center;
+    gap:6px;
+    margin-top:15px;
+    max-width:340px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .pill{
+    padding:6px 10px;
+    font-size:9px;
+  }
+
+  .hero-scroll{
+    margin-top:18px;
+    font-size:9px;
+    letter-spacing:1.6px;
+  }
+
+  .hero-scroll span{
+    width:27px;
+    height:27px;
+  }
+
+  /* ---------------- QUICK FACTS ---------------- */
+  .facts{
+    margin-top:-8px;
+    padding-top:8px;
+    padding-bottom:18px;
+  }
+
+  .facts-grid{
+    gap:7px;
+  }
+
+  .fact{
+    padding:13px 6px;
+    border-radius:15px;
+  }
+
+  .fact .number{
+    font-size:21px;
+  }
+
+  .fact .label{
+    margin-top:4px;
+    font-size:7px;
+    letter-spacing:.9px;
+  }
+
+  /* ---------------- SECTION RHYTHM ---------------- */
+  .section{
+    padding:43px 0;
+  }
+
+  .section::after{
+    bottom:9px;
+    width:76px;
+  }
+
+  .section:not(.career):not(.contact-section)::before{
+    top:11px;
+    right:50%;
+    transform:translateX(50%);
+    font-size:9px;
+    letter-spacing:2.5px;
+  }
+
+  .section-label{
+    font-size:9px;
+    letter-spacing:2.2px;
+    margin-bottom:7px;
+  }
+
+  .section-title{
+    font-size:clamp(34px,10vw,43px);
+    line-height:.96;
+  }
+
+  .section-lead{
+    margin-top:12px;
+    font-size:12px;
+    line-height:1.55;
+  }
+
+  /* Give every chapter a tiny visual hand-off to the next chapter. */
+  .section:not(.hero):not(.contact-section) .container::after{
+    content:"↓";
+    display:block;
+    width:28px;
+    height:28px;
+    margin:25px auto -31px;
+    border:1px solid rgba(184,148,82,.30);
+    border-radius:50%;
+    color:rgba(184,148,82,.70);
+    font-size:12px;
+    line-height:26px;
+    text-align:center;
+  }
+
+  /* ---------------- ABOUT / DETAILS / FAMILY ---------------- */
+  .about-grid,
+  .partner{
+    gap:22px;
+    margin-top:24px;
+  }
+
+  .about-copy{
+    font-size:22px;
+    line-height:1.38;
+  }
+
+  .about-copy p{
+    margin-bottom:14px;
+  }
+
+  .value-grid{
+    gap:9px;
+  }
+
+  .value-card{
+    padding:16px;
+    border-radius:16px;
+  }
+
+  .value-card h3{
+    font-size:19px;
+    margin:6px 0 4px;
+  }
+
+  .value-card p{
+    font-size:11px;
+    line-height:1.5;
+  }
+
+  .two-col{
+    gap:14px;
+    margin-top:25px;
+  }
+
+  .glass-card{
+    padding:19px;
+    border-radius:20px;
+  }
+
+  .card-title{
+    margin-bottom:13px;
+  }
+
+  .card-title h3{
+    font-size:26px;
+  }
+
+  .card-title span{
+    font-size:8px;
+  }
+
+  .detail{
+    grid-template-columns:1fr auto;
+    gap:10px;
+    padding:10px 0;
+    font-size:11.5px;
+  }
+
+  .detail .val{
+    text-align:right;
+  }
+
+  .gotra-grid{
+    gap:8px;
+    margin-top:13px;
+  }
+
+  .gotra{
+    padding:12px;
+  }
+
+  .gotra strong{
+    font-size:8px;
+  }
+
+  .gotra span{
+    font-size:19px;
+  }
+
+  .family-groups{
+    gap:10px;
+  }
+
+  .family-group{
+    padding:14px;
+    border-radius:15px;
+  }
+
+  .family-group h4{
+    margin-bottom:7px;
+    font-size:8px;
+  }
+
+  .family-line{
+    font-size:11.5px;
+    margin:4px 0;
+  }
+
+  /* ---------------- CAREER: ONE CONTINUOUS MOBILE TIMELINE ---------------- */
+  .career{
+    padding-top:50px;
+    padding-bottom:50px;
+  }
+
+  .career .section-label{
+    color:#e8cf98;
+  }
+
+  .timeline{
+    margin:31px 0 0;
+    padding-left:0;
+  }
+
+  .timeline::before{
+    left:7px;
+    background:linear-gradient(to bottom,transparent,var(--gold) 6%,var(--gold) 94%,transparent);
+  }
+
+  .timeline-item,
+  .timeline-item:nth-child(even){
+    width:100%;
+    margin-left:0;
+    padding:0 0 15px 28px;
+  }
+
+  .timeline-dot,
+  .timeline-item:nth-child(even) .timeline-dot{
+    left:0;
+    right:auto;
+    top:5px;
+    width:15px;
+    height:15px;
+  }
+
+  .timeline-card{
+    padding:16px 15px;
+    border-radius:16px;
+  }
+
+  .timeline-company{
+    font-size:24px;
+  }
+
+  .timeline-role{
+    margin-top:5px;
+    font-size:10px;
+  }
+
+  .timeline-desc{
+    margin-top:6px;
+    font-size:10.5px;
+    line-height:1.5;
+  }
+
+  /* ---------------- BUSINESS CLIMAX ---------------- */
+  .business-feature{
+    margin-top:25px;
+    padding:27px 19px;
+    border-radius:23px;
+    gap:18px;
+  }
+
+  .business-feature .small{
+    font-size:8px;
+    letter-spacing:2.2px;
+  }
+
+  .business-feature h3{
+    font-size:42px;
+  }
+
+  .business-feature p{
+    font-size:11.5px;
+    line-height:1.55;
+  }
+
+  .business-meta{
+    margin-top:13px;
+    gap:6px;
+  }
+
+  .business-meta span{
+    padding:6px 9px;
+    font-size:8px;
+  }
+
+  .visit{
+    padding:11px 17px;
+    font-size:10px;
+  }
+
+  /* ---------------- INTERESTS ---------------- */
+  .interest-grid{
+    grid-template-columns:1fr 1fr;
+    gap:9px;
+    margin-top:24px;
+  }
+
+  .interest{
+    min-height:115px;
+    padding:16px;
+    border-radius:17px;
+  }
+
+  .interest .emoji{
+    font-size:20px;
+  }
+
+  .interest h3{
+    font-size:20px;
+  }
+
+  .interest p{
+    font-size:10px;
+    line-height:1.45;
+  }
+
+  /* ---------------- VISION: CINEMATIC PAUSE ---------------- */
+  .vision-wrap{
+    padding:0 0 43px;
+  }
+
+  .vision{
+    border-radius:25px;
+    padding:57px 19px;
+  }
+
+  .vision h2{
+    font-size:clamp(38px,11vw,50px);
+    margin:11px 0 14px;
+  }
+
+  .vision p{
+    font-size:20px;
+    line-height:1.35;
+  }
+
+  .vision-tags{
+    gap:6px;
+    margin-top:20px;
+  }
+
+  .vision-tags span{
+    padding:6px 10px;
+    font-size:9px;
+  }
+
+  /* ---------------- PARTNER VALUES ---------------- */
+  .partner-quote{
+    font-size:39px;
+    line-height:.98;
+  }
+
+  .preference-grid{
+    gap:8px;
+  }
+
+  .preference{
+    padding:15px;
+    border-radius:15px;
+  }
+
+  .preference strong{
+    font-size:19px;
+  }
+
+  .preference span{
+    font-size:10.5px;
+    line-height:1.45;
+  }
+
+  /* ---------------- GALLERY STORY ---------------- */
+  .gallery{
+    grid-template-columns:1fr;
+    gap:13px;
+    margin-top:25px;
+  }
+
+  .gallery-feature .gallery-frame{
+    min-height:0;
+  }
+
+  .gallery-side{
+    grid-template-columns:1fr;
+    grid-template-rows:auto;
+    gap:13px;
+  }
+
+  .gallery-side .gallery-frame{
+    min-height:0;
+  }
+
+  .gallery-frame{
+    padding:10px;
+    min-height:0;
+  }
+
+  .gallery-frame img{
+    max-height:none;
+    width:100%;
+    height:auto;
+  }
+
+  .gallery-card{
+    border-radius:20px;
+  }
+
+  .gallery-card figcaption{
+    padding:10px 13px 12px;
+    font-size:10px;
+  }
+
+  .gallery-card figcaption span{
+    width:23px;
+    height:23px;
+    flex-basis:23px;
+    font-size:12px;
+  }
+
+  /* ---------------- CONTACT = FINAL CHAPTER ---------------- */
+  .contact-section{
+    margin-top:0;
+    padding:52px 0 38px;
+    min-height:80svh;
+  }
+
+  .contact-section .section-label{
+    color:#e4c47d;
+  }
+
+  .contact-section .section-title{
+    font-size:clamp(38px,11vw,50px);
+  }
+
+  .contact-intro{
+    margin-top:12px;
+    font-size:11.5px;
+    line-height:1.55;
+  }
+
+  .contact-grid{
+    gap:11px;
+    margin-top:25px;
+  }
+
+  .contact-card{
+    min-height:0;
+    padding:18px;
+    border-radius:20px;
+    gap:13px;
+  }
+
+  .contact-icon{
+    flex-basis:40px;
+    width:40px;
+    height:40px;
+    border-radius:13px;
+  }
+
+  .contact-icon svg{
+    width:18px;
+    height:18px;
+  }
+
+  .contact-card .label{
+    font-size:8px;
+    letter-spacing:1.3px;
+  }
+
+  .contact-value{
+    margin:8px 0 14px;
+    font-size:21px;
+  }
+
+  .email-value{
+    font-size:13px;
+  }
+
+  .contact-actions{
+    gap:6px;
+  }
+
+  .contact-action{
+    min-height:37px;
+    padding:8px 8px;
+    font-size:9px;
+  }
+
+  .footer-note{
+    margin-top:35px;
+    font-size:9px;
+  }
+
+  /* The floating dock stays useful without becoming a thumb obstacle. */
+  .floating-dock{
+    right:11px;
+    bottom:max(11px,env(safe-area-inset-bottom));
+    gap:5px;
+    padding:5px;
+  }
+
+  .float-btn{
+    width:39px;
+    height:39px;
+    font-size:15px;
+  }
+
+  /* Reduce reveal distance on touch devices so the page feels immediate. */
+  .reveal{
+    transform:translateY(14px);
+    transition-duration:.55s;
+  }
+}
+
+@media(max-width:380px){
+  .mobile-story-progress{
+    right:2px;
+  }
+
+  .hero{
+    padding-left:15px;
+    padding-right:15px;
+  }
+
+  .hero-photo{
+    width:min(58vw,250px);
+  }
+
+  .hero-copy h1{
+    font-size:55px;
+  }
+
+  .hero-copy .quote{
+    font-size:19px;
+  }
+
+  .pill{
+    padding:5px 8px;
+    font-size:8px;
+  }
+
+  .container{
+    width:min(100% - 30px,1200px);
+  }
+}
+
 </style>
 </head>
 
@@ -1550,8 +3094,24 @@ body{
     <a href="#vision">Marriage</a>
     <a href="#contact">Contact</a>
   </div>
-  <button class="nav-menu" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
+  <button class="nav-menu" type="button" aria-label="Open navigation menu" aria-expanded="false">☰</button>
 </nav>
+
+
+<div class="mobile-story-progress" aria-label="Profile progress">
+  <span class="story-progress-track" aria-hidden="true"></span>
+  <a href="#about" data-progress="about" aria-label="01 About"><span>01</span></a>
+  <a href="#details" data-progress="details" aria-label="02 Details"><span>02</span></a>
+  <a href="#family" data-progress="family" aria-label="03 Family"><span>03</span></a>
+  <a href="#education" data-progress="education" aria-label="04 Education"><span>04</span></a>
+  <a href="#career" data-progress="career" aria-label="05 Career"><span>05</span></a>
+  <a href="#entrepreneurship" data-progress="entrepreneurship" aria-label="06 Entrepreneurship"><span>06</span></a>
+  <a href="#lifestyle" data-progress="lifestyle" aria-label="07 Lifestyle"><span>07</span></a>
+  <a href="#vision" data-progress="vision" aria-label="08 Marriage vision"><span>08</span></a>
+  <a href="#partner" data-progress="partner" aria-label="09 Partner values"><span>09</span></a>
+  <a href="#moments" data-progress="moments" aria-label="10 Moments"><span>10</span></a>
+  <a href="#contact" data-progress="contact" aria-label="11 Contact"><span>11</span></a>
+</div>
 
 <main class="page">
 
@@ -1800,7 +3360,7 @@ body{
   </div>
 </section>
 
-<section class="section">
+<section id="entrepreneurship" class="section">
   <div class="container">
     <div class="section-label">06 · Entrepreneurship</div>
     <h2 class="section-title">Building Something of My Own</h2>
@@ -1822,7 +3382,7 @@ body{
   </div>
 </section>
 
-<section class="section soft-section">
+<section id="lifestyle" class="section soft-section">
   <div class="container">
     <div class="section-label">07 · Outside work</div>
     <h2 class="section-title">Lifestyle & Interests</h2>
@@ -1852,7 +3412,7 @@ body{
   </div>
 </section>
 
-<section class="section soft-section">
+<section id="partner" class="section soft-section">
   <div class="container">
     <div class="partner">
       <div class="reveal">
@@ -1872,7 +3432,7 @@ body{
   </div>
 </section>
 
-<section class="section">
+<section id="moments" class="section">
   <div class="container">
     <div class="section-label">10 · Moments</div>
     <h2 class="section-title">Glimpses</h2>
@@ -2028,9 +3588,24 @@ const nav = document.querySelector(".nav");
 const navLinks = document.querySelector(".nav-links");
 const navMenu = document.querySelector(".nav-menu");
 
-navMenu.addEventListener("click", () => {
+navMenu.addEventListener("click", (event) => {
+  event.stopPropagation();
   const isOpen = nav.classList.toggle("menu-open");
   navMenu.setAttribute("aria-expanded", String(isOpen));
+});
+
+document.addEventListener("click", (event) => {
+  if (!nav.contains(event.target)) {
+    nav.classList.remove("menu-open");
+    navMenu.setAttribute("aria-expanded", "false");
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    nav.classList.remove("menu-open");
+    navMenu.setAttribute("aria-expanded", "false");
+  }
 });
 
 navLinks.querySelectorAll("a").forEach(link => {
@@ -2046,6 +3621,48 @@ window.addEventListener("resize", () => {
     navMenu.setAttribute("aria-expanded", "false");
   }
 });
+
+
+/* ---------- Mobile story progress ---------- */
+(() => {
+  const rail = document.querySelector(".mobile-story-progress");
+  if (!rail) return;
+
+  const links = [...rail.querySelectorAll("a[data-progress]")];
+  const targets = links
+    .map(link => document.getElementById(link.dataset.progress))
+    .filter(Boolean);
+
+  const setActive = (id) => {
+    links.forEach(link => {
+      const active = link.dataset.progress === id;
+      link.classList.toggle("active", active);
+      if (active) link.setAttribute("aria-current", "step");
+      else link.removeAttribute("aria-current");
+    });
+  };
+
+  const progressObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) setActive(entry.target.id);
+    });
+  }, {
+    rootMargin: "-38% 0px -48% 0px",
+    threshold: 0.01
+  });
+
+  targets.forEach(section => progressObserver.observe(section));
+
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      setActive(link.dataset.progress);
+    });
+  });
+
+  if (window.matchMedia("(max-width: 560px)").matches) {
+    setActive("about");
+  }
+})();
 
 </script>
 </body>
