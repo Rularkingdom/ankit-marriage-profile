@@ -996,31 +996,544 @@ button{font:inherit}
 }
 
 
-/* ---------- PAGE BACKGROUND THEME ---------- */
+/* ---------- FULL-PAGE CLASSIC MARRIAGE WALLPAPER ---------- */
+body{
+  background:
+    radial-gradient(circle at 50% 8%, rgba(184,148,82,.20), transparent 28%),
+    radial-gradient(circle at 4% 35%, rgba(90,24,37,.11), transparent 24%),
+    radial-gradient(circle at 96% 65%, rgba(90,24,37,.09), transparent 25%),
+    linear-gradient(135deg,#eee0c8 0%,#f7eddd 23%,#ead9bc 50%,#f7eddd 77%,#eadcc2 100%);
+  background-attachment:fixed;
+}
+
+/* The wallpaper covers the complete page, not only individual sections. */
+.page{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+}
+
+/* Repeating antique-paper pattern */
+.page::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-3;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 28px 28px, rgba(90,24,37,.12) 0 2px, transparent 3px),
+    radial-gradient(circle at 78px 78px, rgba(184,148,82,.14) 0 1.5px, transparent 3px),
+    linear-gradient(45deg, transparent 47%, rgba(184,148,82,.085) 48%, rgba(184,148,82,.085) 52%, transparent 53%),
+    linear-gradient(-45deg, transparent 47%, rgba(90,24,37,.045) 48%, rgba(90,24,37,.045) 52%, transparent 53%);
+  background-size:100px 100px;
+  opacity:.95;
+}
+
+/* Large, soft ornamental medallions across the page */
+.page::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 4% 12%, transparent 0 78px, rgba(184,148,82,.11) 79px 80px, transparent 81px),
+    radial-gradient(circle at 4% 12%, transparent 0 108px, rgba(90,24,37,.055) 109px 110px, transparent 111px),
+    radial-gradient(circle at 96% 12%, transparent 0 78px, rgba(184,148,82,.11) 79px 80px, transparent 81px),
+    radial-gradient(circle at 96% 12%, transparent 0 108px, rgba(90,24,37,.055) 109px 110px, transparent 111px),
+    radial-gradient(circle at 4% 88%, transparent 0 78px, rgba(184,148,82,.11) 79px 80px, transparent 81px),
+    radial-gradient(circle at 96% 88%, transparent 0 78px, rgba(184,148,82,.11) 79px 80px, transparent 81px),
+    radial-gradient(ellipse at center, transparent 0 55%, rgba(90,24,37,.035) 100%);
+  opacity:.95;
+  mix-blend-mode:multiply;
+}
+
+/* Classic double-line frame around the whole digital biodata */
+.page{
+  border-left:1px solid rgba(184,148,82,.20);
+  border-right:1px solid rgba(184,148,82,.20);
+  box-shadow:
+    0 0 0 7px rgba(255,253,248,.22),
+    inset 0 0 90px rgba(184,148,82,.035);
+}
+
+/* Let the wallpaper remain visible between sections. */
+.soft-section{
+  background:rgba(255,253,248,.22);
+}
+.glass-card{
+  background:rgba(255,253,248,.70);
+}
+.value-card,
+.preference,
+.interest,
+.gotra,
+.family-group{
+  background:rgba(255,253,248,.72);
+}
+
+/* Small traditional section ornament */
 .section:not(.career):not(.contact-section){
   position:relative;
 }
 .section:not(.career):not(.contact-section)::before{
-  content:"✦";
+  content:"◆  ✦  ◆";
   position:absolute;
-  top:30px;
-  right:4.5%;
-  color:rgba(184,148,82,.24);
+  top:24px;
+  right:5%;
+  color:rgba(184,148,82,.30);
   font-family:"Cormorant Garamond",serif;
-  font-size:27px;
+  font-size:13px;
+  letter-spacing:4px;
   pointer-events:none;
 }
-.soft-section::after{
+
+/* ---------- COLORED CONTACT AREA ---------- */
+.contact-section{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 10% 12%, rgba(223,188,112,.26), transparent 25%),
+    radial-gradient(circle at 90% 88%, rgba(223,188,112,.18), transparent 28%),
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,.035), transparent 45%),
+    linear-gradient(135deg,#46101d 0%,#5d1728 38%,#701e31 66%,#3e0c18 100%) !important;
+  color:#fff;
+  border-top:1px solid rgba(223,188,112,.45);
+  border-bottom:1px solid rgba(223,188,112,.45);
+}
+.contact-section::before{
   content:"";
   position:absolute;
-  width:230px;
-  height:230px;
-  right:-115px;
-  top:50%;
-  transform:translateY(-50%);
-  border:1px solid rgba(184,148,82,.10);
-  border-radius:50%;
+  inset:0;
   pointer-events:none;
+  opacity:.52;
+  background:
+    radial-gradient(circle at 7% 18%, transparent 0 55px, rgba(223,188,112,.28) 56px 57px, transparent 58px),
+    radial-gradient(circle at 7% 18%, transparent 0 82px, rgba(223,188,112,.12) 83px 84px, transparent 85px),
+    radial-gradient(circle at 93% 82%, transparent 0 62px, rgba(223,188,112,.24) 63px 64px, transparent 65px),
+    radial-gradient(circle at 93% 82%, transparent 0 92px, rgba(223,188,112,.10) 93px 94px, transparent 95px),
+    linear-gradient(45deg, transparent 48%, rgba(255,255,255,.035) 49%, transparent 51%),
+    linear-gradient(-45deg, transparent 48%, rgba(223,188,112,.035) 49%, transparent 51%);
+  background-size:auto,auto,auto,auto,72px 72px,72px 72px;
+}
+.contact-section .container{position:relative;z-index:1}
+.contact-section .section-label{color:#e4c47d}
+.contact-section .section-title{color:#fffaf1}
+.contact-intro{color:rgba(255,255,255,.78) !important}
+
+/* Contact cards become proper frosted-maroon placeholders. */
+.contact-card{
+  min-height:245px;
+  background:linear-gradient(145deg,rgba(255,255,255,.145),rgba(255,255,255,.055)) !important;
+  border:1px solid rgba(223,188,112,.40) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.08),
+    0 22px 55px rgba(24,3,10,.28) !important;
+}
+.contact-card:hover{
+  background:linear-gradient(145deg,rgba(255,255,255,.20),rgba(255,255,255,.075)) !important;
+  border-color:rgba(223,188,112,.72) !important;
+  transform:translateY(-6px);
+}
+.contact-icon{
+  background:rgba(223,188,112,.16) !important;
+  border:1px solid rgba(223,188,112,.40) !important;
+  color:#e5c47b !important;
+  box-shadow:0 8px 20px rgba(0,0,0,.12);
+}
+.contact-card .label{
+  color:#e4c47d !important;
+}
+.contact-value{
+  color:#fffdf8 !important;
+  text-shadow:0 1px 12px rgba(0,0,0,.12);
+}
+.email-value{
+  color:#fffdf8 !important;
+}
+.contact-actions{
+  margin-top:auto;
+}
+.contact-action{
+  background:#fffaf0 !important;
+  color:#5a1825 !important;
+  box-shadow:0 7px 18px rgba(0,0,0,.12);
+}
+.contact-action.whatsapp{
+  background:#25b65a !important;
+  color:#fff !important;
+}
+.contact-action.email-action{
+  background:#d5ae63 !important;
+  color:#4d1322 !important;
+}
+.contact-action.share-action{
+  background:rgba(255,255,255,.11) !important;
+  color:#fff !important;
+  border:1px solid rgba(255,255,255,.24) !important;
+}
+.footer-note{color:rgba(255,255,255,.60) !important}
+
+/* Contact cards are slightly more compact and balanced on mobile. */
+@media(max-width:560px){
+  .contact-card{padding:22px;min-height:0}
+  .contact-value{font-size:22px}
+  .email-value{font-size:14px}
+}
+
+/* Keep the full wallpaper elegant on small screens. */
+@media(max-width:560px){
+  .page::before{opacity:.48}
+  .page::after{opacity:.55}
+  .section:not(.career):not(.contact-section)::before{right:7%;font-size:11px}
+}
+
+
+
+/* =========================================================
+   V6 VISUAL REFINEMENT
+   Richer wedding-paper wallpaper + non-cropping gallery
+   ========================================================= */
+
+/* ---- richer full-page wallpaper ---- */
+html, body{
+  background:#d8c1a4;
+}
+
+body{
+  background:
+    radial-gradient(ellipse at 50% -8%, rgba(184,148,82,.30) 0%, rgba(184,148,82,.08) 24%, transparent 48%),
+    radial-gradient(ellipse at 0% 22%, rgba(90,24,37,.22) 0%, transparent 34%),
+    radial-gradient(ellipse at 100% 42%, rgba(90,24,37,.18) 0%, transparent 34%),
+    radial-gradient(ellipse at 18% 88%, rgba(184,148,82,.17) 0%, transparent 30%),
+    radial-gradient(ellipse at 82% 92%, rgba(90,24,37,.15) 0%, transparent 32%),
+    linear-gradient(115deg,#cbb28f 0%,#ead8b9 20%,#f2e4cb 48%,#e5ceb0 75%,#c9ad86 100%);
+  background-attachment:fixed;
+}
+
+/* A refined paper grain and barely-visible textile motif.
+   No repeating diamond wallpaper. */
+.page::before{
+  opacity:1;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,250,238,.24), transparent 31%),
+    radial-gradient(circle at 8% 12%, transparent 0 78px, rgba(184,148,82,.22) 79px 80px, transparent 81px),
+    radial-gradient(circle at 92% 12%, transparent 0 78px, rgba(184,148,82,.22) 79px 80px, transparent 81px),
+    radial-gradient(circle at 8% 88%, transparent 0 78px, rgba(184,148,82,.17) 79px 80px, transparent 81px),
+    radial-gradient(circle at 92% 88%, transparent 0 78px, rgba(184,148,82,.17) 79px 80px, transparent 81px);
+}
+
+.page::after{
+  opacity:.62;
+  background:
+    linear-gradient(90deg, transparent 0 5%, rgba(90,24,37,.055) 5.05%, transparent 5.12% 94.88%, rgba(90,24,37,.055) 94.95%, transparent 95%),
+    repeating-linear-gradient(0deg, rgba(90,24,37,.018) 0 1px, transparent 1px 7px),
+    radial-gradient(ellipse at center, transparent 45%, rgba(90,24,37,.10) 100%);
+  background-size:auto, auto, auto;
+  mix-blend-mode:multiply;
+}
+
+/* Elegant side rails */
+.page{
+  border-left:1px solid rgba(184,148,82,.42);
+  border-right:1px solid rgba(184,148,82,.42);
+  box-shadow:
+    0 0 0 7px rgba(255,250,239,.24),
+    inset 22px 0 55px rgba(90,24,37,.035),
+    inset -22px 0 55px rgba(90,24,37,.035);
+}
+
+/* Keep the paper visible while giving every content region a readable surface */
+.soft-section{
+  background:rgba(250,243,228,.22) !important;
+  border-top-color:rgba(184,148,82,.28) !important;
+  border-bottom-color:rgba(184,148,82,.28) !important;
+}
+
+.section{
+  position:relative;
+}
+
+.section::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:20px;
+  width:110px;
+  height:1px;
+  transform:translateX(-50%);
+  background:linear-gradient(90deg,transparent,rgba(184,148,82,.42),transparent);
+  pointer-events:none;
+}
+
+/* ---- hero refinement ---- */
+.hero{
+  box-shadow:inset 0 -1px 0 rgba(184,148,82,.35), 0 25px 80px rgba(40,10,18,.18);
+}
+
+.hero-copy .eyebrow{
+  color:#ead5a2;
+}
+
+.hero-photo .photo-frame{
+  background:linear-gradient(145deg,#e5c982,#b89452,#6b3a20);
+}
+
+/* ---- cards become translucent luxury-paper cards ---- */
+.glass-card,
+.value-card,
+.preference,
+.interest,
+.gotra,
+.family-group{
+  background:
+    linear-gradient(145deg,rgba(255,252,244,.84),rgba(248,235,211,.68)) !important;
+  border-color:rgba(184,148,82,.40) !important;
+  box-shadow:
+    0 18px 45px rgba(67,35,18,.10),
+    inset 0 1px 0 rgba(255,255,255,.70);
+}
+
+.fact{
+  background:rgba(255,249,237,.84) !important;
+  border-color:rgba(184,148,82,.45);
+  box-shadow:0 18px 45px rgba(67,35,18,.13);
+}
+
+/* ---- gallery: image is NEVER cropped ---- */
+.gallery{
+  display:grid;
+  grid-template-columns:minmax(0,1.12fr) minmax(300px,.88fr);
+  gap:18px;
+  margin-top:42px;
+  align-items:start;
+}
+
+.gallery-card{
+  margin:0;
+  overflow:hidden;
+  border-radius:28px;
+  border:1px solid rgba(184,148,82,.46);
+  background:
+    linear-gradient(145deg,rgba(255,250,239,.84),rgba(239,219,188,.64));
+  box-shadow:
+    0 22px 55px rgba(58,28,18,.13),
+    inset 0 1px 0 rgba(255,255,255,.75);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+}
+
+.gallery-frame{
+  position:relative;
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:16px;
+  min-height:220px;
+  background:
+    radial-gradient(circle at 50% 35%,rgba(184,148,82,.13),transparent 55%),
+    rgba(255,253,248,.32);
+}
+
+.gallery-feature .gallery-frame{
+  min-height:520px;
+}
+
+.gallery-side{
+  display:grid;
+  grid-template-rows:auto auto;
+  gap:18px;
+}
+
+.gallery-side .gallery-frame{
+  min-height:245px;
+}
+
+.gallery-frame img{
+  width:100%;
+  height:auto;
+  max-width:100%;
+  max-height:680px;
+  display:block;
+  object-fit:contain !important;
+  object-position:center !important;
+  padding:0 !important;
+  background:transparent !important;
+  border-radius:18px;
+  transition:transform .55s ease, filter .55s ease;
+}
+
+.gallery-card:hover .gallery-frame img{
+  transform:scale(1.018);
+  filter:saturate(1.04) contrast(1.01);
+}
+
+.gallery-card figcaption{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:13px 18px 15px;
+  color:#6d5350;
+  font-size:11px;
+  letter-spacing:.2px;
+  border-top:1px solid rgba(184,148,82,.20);
+}
+
+.gallery-card figcaption span{
+  display:grid;
+  place-items:center;
+  width:26px;
+  height:26px;
+  flex:0 0 26px;
+  border-radius:50%;
+  background:#5a1825;
+  color:#ead5a2;
+  font-family:"Cormorant Garamond",serif;
+  font-size:14px;
+  font-weight:700;
+}
+
+.gallery-missing{
+  display:none;
+  min-height:190px;
+  width:100%;
+  place-items:center;
+  text-align:center;
+  padding:30px;
+  color:#765e57;
+  font-family:"Cormorant Garamond",serif;
+  font-size:24px;
+}
+
+.gallery-frame.missing{
+  min-height:250px;
+}
+
+.gallery-frame.missing .gallery-missing{
+  display:grid;
+}
+
+/* ---- contact: stronger, premium finale ---- */
+.contact-section{
+  margin-top:10px;
+  background:
+    radial-gradient(circle at 8% 8%, rgba(224,190,115,.24), transparent 24%),
+    radial-gradient(circle at 92% 92%, rgba(224,190,115,.18), transparent 25%),
+    radial-gradient(circle at 50% 40%, rgba(255,255,255,.035), transparent 45%),
+    linear-gradient(135deg,#3a0b16 0%,#571322 28%,#721f32 58%,#4b0e1c 100%) !important;
+  border-top:1px solid rgba(224,190,115,.55);
+  border-bottom:1px solid rgba(224,190,115,.55);
+  box-shadow:inset 0 30px 90px rgba(0,0,0,.10), 0 -20px 60px rgba(55,13,22,.10);
+}
+
+.contact-section::before{
+  opacity:.75;
+  background:
+    radial-gradient(circle at 7% 17%, transparent 0 55px, rgba(224,190,115,.30) 56px 57px, transparent 58px),
+    radial-gradient(circle at 7% 17%, transparent 0 82px, rgba(224,190,115,.12) 83px 84px, transparent 85px),
+    radial-gradient(circle at 93% 83%, transparent 0 62px, rgba(224,190,115,.28) 63px 64px, transparent 65px),
+    radial-gradient(circle at 93% 83%, transparent 0 94px, rgba(224,190,115,.10) 95px 96px, transparent 97px);
+}
+
+.contact-grid{
+  gap:20px;
+}
+
+.contact-card{
+  min-height:235px;
+  padding:28px;
+  border-radius:28px;
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.16),rgba(255,255,255,.055)) !important;
+  border:1px solid rgba(229,196,123,.42) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.10),
+    0 24px 55px rgba(20,2,8,.30) !important;
+}
+
+.contact-icon{
+  width:50px;
+  height:50px;
+  flex-basis:50px;
+  border-radius:17px;
+  background:rgba(229,196,123,.14) !important;
+  border-color:rgba(229,196,123,.42) !important;
+  color:#e7c97f !important;
+}
+
+.contact-card .label{
+  color:#e7c97f !important;
+}
+
+.contact-value,
+.email-value{
+  color:#fffaf0 !important;
+}
+
+.contact-action{
+  min-height:42px;
+}
+
+.contact-action.email-action{
+  background:#d7b267 !important;
+}
+
+.footer-note{
+  margin-top:54px;
+}
+
+/* ---- navigation polish ---- */
+.nav{
+  background:rgba(82,18,32,.84);
+  border-color:rgba(230,198,128,.28);
+  box-shadow:0 18px 42px rgba(40,7,15,.28);
+}
+
+/* ---- mobile gallery ---- */
+@media(max-width:900px){
+  .gallery{
+    grid-template-columns:1fr;
+  }
+  .gallery-feature .gallery-frame{
+    min-height:0;
+  }
+  .gallery-side{
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:auto;
+  }
+  .gallery-side .gallery-frame{
+    min-height:0;
+  }
+}
+
+@media(max-width:560px){
+  body{
+    background-attachment:scroll;
+  }
+  .page{
+    border-left:0;
+    border-right:0;
+  }
+  .gallery{
+    gap:14px;
+  }
+  .gallery-side{
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  .gallery-frame,
+  .gallery-feature .gallery-frame,
+  .gallery-side .gallery-frame{
+    min-height:0;
+    padding:12px;
+  }
+  .gallery-frame img{
+    max-height:none;
+  }
+  .gallery-card figcaption{
+    padding:11px 14px 13px;
+  }
 }
 
 </style>
@@ -1052,7 +1565,7 @@ button{font:inherit}
     </div>
 
     <div class="hero-copy reveal">
-      <div class="eyebrow">|| Om Shree Ganeshaya Namah &nbsp; | &nbsp; Jai Jinendra ||</div>
+      <div class="eyebrow">|| Jai Jinendra ||</div>
       <h1>Ankit Jain</h1>
       <div class="subtitle">Marriage Profile</div>
 
@@ -1366,12 +1879,33 @@ button{font:inherit}
     <p class="section-lead">The gallery is ready for personal photographs. Only your own photographs should be placed here.</p>
 
     <div class="gallery">
-      <div class="gallery-main reveal">
-        <img src="ankit-photo.jpeg" alt="Ankit Jain portrait">
-      </div>
-      <div class="gallery-small-wrap">
-        <div class="gallery-small reveal"><img src="ankit-life.jpeg" alt="Ankit Jain - Lifestyle Photograph" loading="lazy"></div>
-        <div class="gallery-small reveal"><img src="ankit-travel.jpeg" alt="Ankit Jain - Travel Photograph" loading="lazy"></div>
+      <figure class="gallery-card gallery-feature reveal">
+        <div class="gallery-frame">
+          <img src="ankit-photo.jpeg" alt="Ankit Jain - Profile Photograph" loading="lazy"
+               onerror="this.style.display='none';this.parentElement.classList.add('missing');">
+          <span class="gallery-missing">Profile photograph</span>
+        </div>
+        <figcaption><span>01</span> A profile moment</figcaption>
+      </figure>
+
+      <div class="gallery-side">
+        <figure class="gallery-card reveal">
+          <div class="gallery-frame">
+            <img src="ankit-life.jpeg" alt="Ankit Jain - Lifestyle Photograph" loading="lazy"
+                 onerror="this.style.display='none';this.parentElement.classList.add('missing');">
+            <span class="gallery-missing">Lifestyle photograph</span>
+          </div>
+          <figcaption><span>02</span> A glimpse of everyday life</figcaption>
+        </figure>
+
+        <figure class="gallery-card reveal">
+          <div class="gallery-frame">
+            <img src="ankit-travel.jpeg" alt="Ankit Jain - Travel Photograph" loading="lazy"
+                 onerror="this.style.display='none';this.parentElement.classList.add('missing');">
+            <span class="gallery-missing">Travel photograph</span>
+          </div>
+          <figcaption><span>03</span> Travel & exploration</figcaption>
+        </figure>
       </div>
     </div>
   </div>
@@ -1432,9 +1966,9 @@ button{font:inherit}
         </div>
         <div class="contact-card-body">
           <div class="label">Email Address</div>
-          <div class="contact-value email-value">ankjan222@gmail.com</div>
+          <div class="contact-value email-value">ankjain222@gmail.com</div>
           <div class="contact-actions">
-            <a class="contact-action email-action" href="mailto:ankjan222@gmail.com">
+            <a class="contact-action email-action" href="mailto:ankjain222@gmail.com">
               <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 002-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
               Email
             </a>
