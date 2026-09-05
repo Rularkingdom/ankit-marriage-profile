@@ -1150,6 +1150,8 @@ button{font:inherit}
 }
 
 @media print{
+  @page{size:A4 portrait;margin:10mm;}
+
   html,body{
     background:#fff!important;
     color:#111!important;
@@ -1157,50 +1159,47 @@ button{font:inherit}
     print-color-adjust:exact!important;
   }
 
-  .nav,
-  .floating-dock,
-  .mobile-story-progress,
-  .contact-chooser,
-  .pdf-download-btn,
-  .nav-menu,
-  .share-action{
-    display:none!important;
+  /* Keep PDF rendering lightweight and fast. */
+  *,*::before,*::after{
+    animation:none!important;
+    transition:none!important;
+    filter:none!important;
+    backdrop-filter:none!important;
+    -webkit-backdrop-filter:none!important;
+    box-shadow:none!important;
+    text-shadow:none!important;
   }
+
+  .nav,.floating-dock,.mobile-story-progress,.contact-chooser,
+  .pdf-download-btn,.nav-menu,.share-action{display:none!important;}
 
   .page{
     overflow:visible!important;
+    isolation:auto!important;
+    border:0!important;
+    box-shadow:none!important;
   }
 
-  .hero{
-    padding-top:40px;
-  }
+  .page::before,.page::after,
+  .section::before{display:none!important;}
 
-  .reveal,
-  .reveal.show{
+  .hero{padding-top:20px!important;}
+
+  .reveal,.reveal.show{
     opacity:1!important;
     transform:none!important;
     visibility:visible!important;
   }
 
-  .section,
-  .hero-inner,
-  .hero-photo,
-  .hero-copy,
-  .card,
-  .contact-person-card,
-  .digital-contact,
-  img{
+  .section,.hero-inner,.hero-photo,.hero-copy,.card,
+  .contact-person-card,.digital-contact,img{
     break-inside:avoid;
     page-break-inside:avoid;
   }
 
-  img{
-    max-width:100%!important;
-  }
+  img{max-width:100%!important;}
 
-  a{
-    text-decoration:none!important;
-  }
+  a{text-decoration:none!important;}
 }
 
 @media(max-width:900px){
