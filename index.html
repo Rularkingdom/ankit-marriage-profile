@@ -1119,12 +1119,88 @@ button{font:inherit}
   .digital-contact-actions{grid-template-columns:1fr 1fr}
 }
 
-/* print */
+/* ---------- PDF / PRINT ---------- */
+.pdf-download-btn{
+  appearance:none;
+  border:1px solid rgba(184,148,82,.55);
+  background:rgba(255,255,255,.10);
+  color:#fff;
+  padding:8px 12px;
+  border-radius:999px;
+  font:inherit;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.7px;
+  cursor:pointer;
+  white-space:nowrap;
+  transition:transform .2s ease,background .2s ease,filter .2s ease;
+}
+.pdf-download-btn:hover{
+  background:rgba(255,255,255,.18);
+  transform:translateY(-1px);
+}
+.pdf-download-btn:focus-visible{
+  outline:2px solid var(--gold);
+  outline-offset:3px;
+}
+
+@page{
+  size:A4 portrait;
+  margin:12mm;
+}
+
 @media print{
-  .nav,.floating-dock{display:none!important}
-  body{background:#fff}
-  .hero{padding-top:40px}
-  .section{break-inside:avoid}
+  html,body{
+    background:#fff!important;
+    color:#111!important;
+    -webkit-print-color-adjust:exact!important;
+    print-color-adjust:exact!important;
+  }
+
+  .nav,
+  .floating-dock,
+  .mobile-story-progress,
+  .contact-chooser,
+  .pdf-download-btn,
+  .nav-menu,
+  .share-action{
+    display:none!important;
+  }
+
+  .page{
+    overflow:visible!important;
+  }
+
+  .hero{
+    padding-top:40px;
+  }
+
+  .reveal,
+  .reveal.show{
+    opacity:1!important;
+    transform:none!important;
+    visibility:visible!important;
+  }
+
+  .section,
+  .hero-inner,
+  .hero-photo,
+  .hero-copy,
+  .card,
+  .contact-person-card,
+  .digital-contact,
+  img{
+    break-inside:avoid;
+    page-break-inside:avoid;
+  }
+
+  img{
+    max-width:100%!important;
+  }
+
+  a{
+    text-decoration:none!important;
+  }
 }
 
 @media(max-width:900px){
@@ -3260,6 +3336,7 @@ body.chooser-open{overflow:hidden}
     <a href="#career">Journey</a>
     <a href="#vision">Marriage</a>
     <a href="#contact">Contact</a>
+    <button class="pdf-download-btn" type="button" onclick="downloadProfilePDF()" aria-label="Download marriage profile as PDF">↓ Download PDF</button>
   </div>
   <button class="nav-menu" type="button" aria-label="Open navigation menu" aria-expanded="false">☰</button>
 </nav>
@@ -3761,6 +3838,11 @@ body.chooser-open{overflow:hidden}
 </div>
 
 <script>
+function downloadProfilePDF(){
+  // Uses the browser's private, built-in print-to-PDF flow.
+  window.print();
+}
+
 function openContactChooser(){
   const el=document.getElementById('contactChooser');
   if(!el) return;
